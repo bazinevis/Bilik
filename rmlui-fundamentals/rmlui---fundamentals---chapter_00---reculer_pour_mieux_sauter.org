@@ -1,0 +1,159 @@
+* Chapter Zero: Reculer pour Mieux Sauter
+-- abstract of this chapter and what we will say
+From eyes of a designer, the importance of user interface in nutshell ...
+
+From eyes of a developer, the user interface (UI) collects user input and passes it to the underlying system, and in return, presents the application’s output back to the user. In this sense, it functions as both the face of the application and the primary bridge between the user and the system’s logic.
+
+in this chapter we will ....
+
+** STEP   ONE: The interface is the product
+From a design perspective, the UI is a user’s first point of contact with an application, and first impressions matter. Just as a positive first impression in human interaction builds interest and openness, an effective interface immediately engages users, encourages them to stay, and invites further exploration. When users are drawn in by the interface, it creates an opportunity to demonstrate the application’s true value and capability, gradually earning their trust through continued use.
+
+Conversely, a poorly designed interface can disappoint users in the blink of an eye. While this is not universally true, a flawed UI can easily lead users to assume that other parts of the application are also poorly designed.
+
+#+begin_quote
+You never get a second chance to make a first impression.
+- Will Rogers
+#+end_quote
+
+In interactive environments—such as games, simulators, and virtual reality—the user interface often appears secondary to the action itself. While some use very little interface at all, a poorly designed UI can still overwhelm users. This is especially true in games, where players are known for having high expectations and a low threshold for patience.
+
+From a technical and development standpoint, an application can be architected independently of its user interface. However, in practice, the UI often acts like the trunk of a tree, with other parts of the application branching from it. It frequently becomes the backbone of the system and plays a significant role in shaping the overall architecture.
+
+The user interface is often one of the biggest challenges in application development. Looking at the market for UI libraries and frameworks, it is clear that everyone approaches UI design and development in their own way, influenced by factors such as time, resources, team experience, and more. +we can understand it's importance by looking how many ui libraries and frameworks are out there.+
+
+#+begin_quote
+The interface is the product.
+- Alan Cooper
+#+end_quote
+
+Standards
+
+talk about some standards like google material.
+
+#+begin_quote
+A user interface is like a joke. If you have to explain it, it’s not that good.
+- Martin LeBlanc
+#+end_quote
+
+User interfaces are often described in terms of widgets, buttons, and layouts, but at a systems level, a UI framework is something much deeper. It is an architectural choice that shapes how an application is structured, how state flows, how rendering happens, and how developers reason about interaction.
+
+As applications grow, UI complexity tends to grow faster than application logic. Layout rules interact with input handling, visual state depends on data, and rendering performance becomes a concern. A UI framework is therefore not just a convenience library; it is a structural backbone.
+
+Different UI frameworks solve this problem in fundamentally different ways. based on some factors like their man power, their goal, their needs, their time and etc.
+
+Third Step: It's about Art, psychology, etc
+ui is art and art technically is about lines, colors, shadows
+
+Simplicity
+
+A user interface system typically consists of several interdependent subsystems:
+
+- A *layout system* that determines where elements appear and how they size themselves
+- An *event system* that routes input such as mouse and keyboard actions
+- A *state model* that represents the current visual and interactive state
+- A *rendering layer* that turns UI descriptions into pixels
+
+As applications grow, UI complexity tends to grow faster than application logic. Layout rules interact with input handling, visual state depends on data, and rendering performance becomes a concern. A UI framework is therefore not just a convenience library; it is a structural backbone.
+
+Different UI frameworks solve this problem in fundamentally different ways. based on some factors like their man power, their goal, their needs, their time and etc.
+
+** STEP   TWO: User Interface vs User Experience
+user interface vs user experience
+
+** STEP THREE: Some Standards and Guidelines
+Google Material, IBM Carbon Design etc
+** STEP  FOUR: Common UI Architecture
+library vs frameworks, etc
+how rendering getting user input etc works. how use does al this. dom.
+using native api or not.
+imperative vs declarative user interface
+*** Architecture of common user interfaces
+**** Classical Widget Framework Architectures
+
+Traditional widget frameworks such as Qt Widgets, GTK, wxWidgets, and CEGUI are typically retained-mode systems built around class hierarchies.
+
+Their architecture usually involves:
+
+- A base widget class
+- Deep inheritance trees for specialized widgets
+- Virtual function overrides for behavior
+- Layout logic expressed in code
+- Styling implemented via skins or themes
+
+***** Common Issues
+
+While powerful, these frameworks often suffer from architectural friction:
+
+- Behavior and presentation are tightly coupled
+- Styling is not a first-class concern
+- UI reuse across projects is difficult
+- Large inheritance hierarchies become fragile over time
+
+These systems work well for certain classes of applications, but they tend to resist declarative approaches and modern styling workflows.
+
+---
+
+**** The Web UI Model (Briefly)
+
+Web technologies introduced a different way of thinking about user interfaces. HTML provides a declarative document structure, CSS defines layout and styling, and the browser manages layout, rendering, and event dispatch.
+
+This model solved several long-standing UI problems:
+
+- Declarative layout
+- Separation of structure and style
+- Flexible styling systems
+
+However, browsers are large, complex systems. Embedding a full browser engine brings significant overhead, unpredictable performance characteristics, and an execution model that is often ill-suited for games and native tools.
+
+*** Immediate vs Retained
+ui in games, overlay. performance, partial update. immediate is not what we meant in OpenGL.
+
+**** retained or immediate
+***** 1.2 Retained-Mode User Interfaces
+
+In a retained-mode UI system, the interface is represented as a persistent tree of elements stored in memory. The UI framework *retains* this structure and is responsible for updating and redrawing it when necessary.
+
+Common characteristics of retained-mode systems include:
+
+- A persistent element or widget tree
+- Automatic layout and redraw when state changes
+- Event propagation through the tree
+- Visual state managed by the UI system itself
+
+Examples of retained-mode UI frameworks include Qt Widgets, WPF, CEGUI, and RmlUi.
+
+****** Strengths
+
+Retained-mode systems are well suited for complex layouts and structured interfaces. Because the UI exists as a persistent structure, it can react to changes incrementally. Styling, layout, and interaction logic can often be separated from application code.
+
+These systems also tend to be more accessible to designers and non-engineers, especially when declarative layout or styling languages are involved.
+
+****** Pitfalls
+
+The main downside of retained-mode systems is complexity that is not always visible. Layout invalidation, redraw rules, and event propagation can become difficult to reason about. Performance problems may arise from unexpected reflows or redraws, and debugging visual issues often requires understanding internal framework behavior.
+
+---
+
+***** 1.3 Immediate-Mode User Interfaces
+
+Immediate-mode UI systems take a very different approach. Instead of storing a persistent UI tree, the interface is rebuilt every frame directly from code.
+
+In an immediate-mode system:
+
+- The UI is described procedurally each frame
+- There is no retained widget hierarchy
+- State typically lives in application code
+- Rendering is explicit and predictable
+
+The most well-known example of this approach is Dear ImGui.
+
+****** Strengths
+
+Immediate-mode UIs are easy to reason about. What you see on screen is a direct result of the code executed that frame. There are no hidden invalidation rules or background layout passes. This makes immediate-mode systems especially attractive for debugging tools, editors, and internal utilities.
+
+****** Pitfalls
+
+Immediate-mode systems scale poorly for large, styled interfaces. Layout logic tends to be embedded in code, theming is difficult, and collaboration with designers is limited. For applications with complex visual identity or large UI surfaces, immediate-mode often becomes cumbersome.
+
+---

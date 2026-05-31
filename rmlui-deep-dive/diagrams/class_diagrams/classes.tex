@@ -1,0 +1,28 @@
+%% Classes
+
+\begin{scope}[local bounding box = Classes]
+  \umlclass[name = NonCopyMoveable, fill = red!20, x = 0, y = 0]
+  {NonCopyMoveable}
+  {}
+  {}
+
+  \umlclass[name = Stream, below = 1cm of NonCopyMoveable]
+  {Stream}
+  {}
+  {}
+
+  \umlclass[name = StreamFile, below right = 1cm and 1cm of Stream]
+  {StreamFile}
+  {}
+  {}
+
+  \umlclass[name = StreamMemory, below left = 1cm and 1cm of Stream]
+  {StreamMemory}
+  {}
+  {}
+
+  \umlclass[name = URL, above left = -0.5 and 2cm of Stream]
+  {URL}
+  {}
+  {}
+\end{scope}

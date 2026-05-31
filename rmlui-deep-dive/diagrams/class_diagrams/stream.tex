@@ -1,0 +1,38 @@
+\begin{scope}[local bounding box = Stream]
+  \umlclass[name = NonCopyMoveable, fill = red!20, x = 0, y = 0]
+  {NonCopyMoveable}
+  {}
+  {}
+
+  \umlclass[name = Stream, below = 1cm of NonCopyMoveable]
+  {Stream}
+  {}
+  {}
+
+  \umlclass[name = StreamFile, below right = 1cm and 1cm of Stream]
+  {StreamFile}
+  {}
+  {}
+
+  \umlclass[name = StreamMemory, below left = 1cm and 1cm of Stream]
+  {StreamMemory}
+  {}
+  {}
+
+  \umlclass[name = URL, above left = -0.5 and 2cm of Stream]
+  {URL}
+  {}
+  {}
+
+  \umlenum[above left = 1cm and 2cm of Stream]
+  {StreamMode}
+  {}
+  {}
+
+
+  \umlinherit[]{Stream}{NonCopyMoveable}
+  \umlinherit[geometry = |-|]{StreamFile}{Stream}
+  \umlinherit[geometry = |-|]{StreamMemory}{Stream}
+  \umlcompo[geometry = -|-, arm2 = 1cm]{Stream}{URL}
+  \umlnest[geometry = -|-, anchor1 = 160]{Stream}{StreamMode}
+\end{scope}

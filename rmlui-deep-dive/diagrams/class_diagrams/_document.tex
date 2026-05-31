@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{packages/tikz-uml}
+\usetikzlibrary{positioning}
+\usepackage{geometry}
+\geometry{a2paper}
+%\geometry{landscape}
+\tikzumlset{
+  % fill class = white,
+  % text = black
+}
+\usepackage{fontspec}
+\tikzumlset{font=\fontspec{UbuntuMono Nerd Font}}
+
+
+\begin{document}
+%\begin{tikzpicture}[remember picture, overlay]
+%  \draw[
+%  step=1cm,
+%  gray!25,
+%  very thin
+%  ]
+%  (current page.south west)
+%  grid
+%  (current page.north east);
+%\end{tikzpicture}
+
+\begin{tikzpicture}
+  \umlclass[x=0,y=0]{BaseXMLParser}
+  {
+    - source\_url : const URL* \\
+    - xml\_source : String \\
+    - xml\_index : size\_t \\
+    - line\_number : int \\
+    - line\_number\_open\_tag : int \\
+    - open\_tag\_depth : int \\
+    - inner\_xml\_data : bool \\
+    - inner\_xml\_data\_terminate\_depth : int \\
+    - inner\_xml\_data\_index\_begin : size\_t \\
+    - attributes : XMLAttributes \\
+    - data : String \\
+    - cdata\_tags : SmallUnorderedSet<String> \\
+    - attributes\_for\_inner\_xml\_data : SmallUnorderedSet<String>
+  }
+  {
+    + BaseXMLParser() \\
+    + \textasciitilde BaseXMLParser() \\
+    + RegisterCDATATag(String) : void \\
+    + RegisterInnerXMLAttribute(String) : void \\
+    + Parse(Stream*) : void \\
+    + GetLineNumber() : int \\
+    + GetLineNumberOpenTag() : int \\
+    + HandleElementStart(String, XMLAttributes) : void \\
+    + HandleElementEnd(String) : void \\
+    + HandleData(String, XMLDataType) : void \\
+    + GetSourceURLPtr() : const URL* \\
+    - Next() : void \\
+    - AtEnd() : bool \\
+    - Look() : char \\
+    - HandleElementStartInternal(String, XMLAttributes) : void \\
+    - HandleElementEndInternal(String) : void \\
+    - HandleDataInternal(String, XMLDataType) : void \\
+    - ReadHeader() : void \\
+    - ReadBody() : void \\
+    - ReadOpenTag() : bool \\
+    - ReadCloseTag(size\_t) : bool \\
+    - ReadAttributes(XMLAttributes, bool\&) : bool \\
+    - ReadCDATA(const char*) : bool \\
+    - FindWord(String, const char*) : bool \\
+    - FindString(const char*, String, bool) : bool \\
+    - PeekString(const char*, bool) : bool
+  }
+
+  \umlclass[x=0,y=-15]{XMLParser}
+  {
+    - header : UniquePtr<DocumentHeader> \\
+    - active\_handler : XMLNodeHandler* \\
+    - stack : Stack<ParseFrame>
+  }
+  {
+    + XMLParser(Element*) \\
+    + \textasciitilde XMLParser() \\
+    + \umlstatic{RegisterNodeHandler(String, SharedPtr<XMLNodeHandler>) : XMLNodeHandler*} \\
+    + \umlstatic{GetNodeHandler(String) : XMLNodeHandler*} \\
+    + \umlstatic{ReleaseHandlers() : void} \\
+    + GetDocumentHeader() : DocumentHeader* \\
+    + PushHandler(String) : bool \\
+    + PushDefaultHandler() : void \\
+    + GetParseFrame() : const ParseFrame* \\
+    + GetSourceURL() : const URL\& \\
+    \# HandleElementStart(String, XMLAttributes) : void \\
+    \# HandleElementEnd(String) : void \\
+    \# HandleData(String, XMLDataType) : void
+  }
+
+  \umlclass[left = 5cm of XMLParser]{ParseFrame}
+  {
+    - tag : String \\
+    - element : Element* \\
+    - node\_handler : XMLNodeHandler* \\
+    - child\_handler : XMLNodeHandler*
+  }
+  {}
+
+  \umlinherit{XMLParser}{BaseXMLParser}
+  \umlcompo{XMLParser}{ParseFrame}
+
+\end{tikzpicture}
+
+
+
+%\begin{tikzpicture}
+%  \begin{umlpackage}{Rml}
+%
+%    \begin{scope}[shift={(0, 0)}]
+%      \input{stream}
+%    \end{scope}
+%
+%    \begin{scope}[shift={(-15, 1.5)}]
+%      \input{xml_parser}
+%    \end{scope}
+%
+%    \input{_relations}
+%
+%  \end{umlpackage}
+%\end{tikzpicture}
+
+\end{document}

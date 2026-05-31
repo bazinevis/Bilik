@@ -1,0 +1,19 @@
+\NewDocumentCommand{\enumbox}{ m m }{%
+  \begin{center}
+    \tikz \node[
+    draw,
+    rectangle,
+    rounded corners,
+    inner sep=6pt,
+    font=\ttfamily\small
+    ] {
+      \begin{tabular}{@{}c@{}}
+        \textbf{<<enum>>}\\
+        \textbf{#1}\\ \hline
+        \begin{tabular}{@{}l@{\quad}c@{\quad}r@{}}
+          #2
+        \end{tabular}
+      \end{tabular}
+    };
+  \end{center}
+}

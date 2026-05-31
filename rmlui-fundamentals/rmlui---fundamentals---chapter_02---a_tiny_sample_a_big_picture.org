@@ -1,0 +1,20 @@
+#+title: Chapter Two: A Tiny Sample, A Big Picture
+
+:COMMENT:
+In this chapter we will show a simple sample and based on that we will explain some fundamental concepts in RmlUi. This sample should be simple as well as containing almost all important elements and styles and overall structure.
+
+The Anatomy of an HTML Document
+<!DOCTYPE>
+<html>, <head>, <body>
+Metadata
+Linking Resources
+
+everything is a box. Box model goes here.
+
+How RmlUi Works
+Contexts
+Documents
+Elements
+Rendering
+Events
+:END:

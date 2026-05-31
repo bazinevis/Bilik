@@ -1,0 +1,30 @@
+#+TITLE: Bilik
+
+* Bilik Project
+Bilik is a project form Bazinevis.com
+src_<cpp>{int main() {}}
+
+
+** Focus on History
+The study of history is valuable because it reveals why something exists in the first place—the real problems people were trying to solve, the obstacles they encountered, and the human needs or curiosities that drove its creation. Understanding the “why” behind any tool, idea, or invention makes it easier to grasp, remember, and use creatively. It also helps us see why things are the way they are, and not otherwise.
+
+The study of history is just as essential as understanding the things themselves. It allows us to learn more deeply, retain knowledge longer, and apply it with greater wisdom.
+
+As the ancient Greek historian Herodotus famously remarked, “Necessity is the mother of invention.” Across the centuries, this simple truth has held: genuine advances in science, technology, and knowledge rarely spring from idle curiosity alone. They are born when people face real, pressing problems—when the tools at hand fall short, when understanding is urgently needed, or when a better way simply has to be found. Necessity sharpens focus, sparks creativity, and drives us to discover ideas that, once revealed, seem obvious in hindsight yet were invisible before the need arose.
+
+because of importance of history in deep learning we focus on that in this book as the main path. we believe if history is said simply without redundancy can help learning and shine the path to the future.
+
+** Focus on People
+As Isaac Newton famously reflected, these advances were not made in solitude but by “standing on the shoulders of giants.”
+
+Although many great minds have contributed to this journey from the earliest times to the present day, certain turning points stand out—moments when the work of a few remarkable individuals profoundly changed the direction and development
+
+** Focus on Experiential learning
+hi i am pooya i want to practically use everything i learn
+
+** Focus on Conceptual learning
+hi i am sheyda i want to learn deeply
+
+* Table of Content
+** [[file:./math/math.org][Math]]
+** [[file:./rmlui/rmlui.org][RmlUi]]

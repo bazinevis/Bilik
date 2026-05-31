@@ -1,0 +1,76 @@
+\begin{scope}[local bounding box = XMLParser]
+  \umlclass[name = BaseXMLParser]
+  {BaseXMLParser}
+  {}
+  {}
+
+  \umlenum[name = XMLDataType, right = 2cm of BaseXMLParser]
+  {XMLDataType}
+  {}
+  {}
+
+  \umlclass[name = XMLParser, below = 1cm of BaseXMLParser]
+  {XMLParser}
+  {}
+  {}
+
+%  \umlclass[name = ParseFrame, above right = 1cm and 2cm of XMLParser]
+%  {ParseFrame}
+%  {}
+%  {}
+
+
+  {
+    %% --- --- Nodes --- --- %%
+    \umlemptyclass[name = NonCopyMoveable, fill = red!20, left = 2cm of XMLParser]
+    {NonCopyMoveable}
+
+    \umlemptyclass[name = XMLNodeHandler, below left = 2cm and 2cm of XMLParser]
+    {XMLNodeHandler}
+
+    \umlemptyclass[name = XMLNodeHandlerBody, below left = 2cm and 5cm of XMLNodeHandler]
+    {XMLNodeHandlerBody}
+
+    \umlemptyclass[name = XMLNodeHandlerDefault, below left = 2cm and -1cm of XMLNodeHandler]
+    {XMLNodeHandlerDefault}
+
+    \umlemptyclass[name = XMLNodeHandlerHead, below right = 2cm and -1cm of XMLNodeHandler]
+    {XMLNodeHandlerHead}
+
+    \umlemptyclass[name = XMLNodeHandlerTemplate, below right = 2cm and 5cm of XMLNodeHandler]
+    {XMLNodeHandlerTemplate}
+
+
+    %% --- --- Relations --- --- %%
+    \umlinherit[]{XMLNodeHandler}{NonCopyMoveable}
+    \umlinherit[geometry = |-|]{XMLNodeHandlerBody}{XMLNodeHandler}
+    \umlinherit[geometry = |-|]{XMLNodeHandlerDefault}{XMLNodeHandler}
+    \umlinherit[geometry = |-|]{XMLNodeHandlerHead}{XMLNodeHandler}
+    \umlinherit[geometry = |-|]{XMLNodeHandlerTemplate}{XMLNodeHandler}
+  }
+
+
+  \umlemptyclass[name = ParseFrame, below right = 2cm and 2cm of XMLParser]
+  {ParseFrame}
+
+  \umlemptyclass[name = DocumentHeader, below = 0.5cm of XMLParser]
+  {DocumentHeader}
+
+  \umlemptyclass[name = Resource, below = 0.5cm of DocumentHeader]
+  {Resource}
+
+  \umldep{BaseXMLParser}{XMLDataType}
+  \umldep[geometry = -|-]{XMLParser}{XMLNodeHandler}
+  \umldep{XMLParser}{DocumentHeader}
+  \umlnest[anchors = 80 and 280]{Resource}{DocumentHeader}
+  \umlcompo[anchors = 100 and 260]{Resource}{DocumentHeader}
+  \umlinherit{XMLParser}{BaseXMLParser}
+  \umlnest[geometry = -|, anchors = east and north]{XMLParser}{ParseFrame}
+  \umlcompo[geometry = -|, , anchors = -10 and 120]{XMLParser}{ParseFrame}
+
+
+
+  URL
+  XMLAttributes
+  Element
+\end{scope}

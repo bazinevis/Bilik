@@ -1,0 +1,298 @@
+\documentclass[11pt]{article}
+\begin{document}
+
+\section{RCSS Selectors}
+There are different ways to select and elements in rcss.
+\subsection{Structral pseudo-classes Selector}
+enum class StructuralSelectorType {
+  Invalid,
+  Nth_Child,
+  Nth_Last_Child,
+  Nth_Of_Type,
+  Nth_Last_Of_Type,
+  First_Child,
+  Last_Child,
+  First_Of_Type,
+  Last_Of_Type,
+  Only_Child,
+  Only_Of_Type,
+  Empty,
+  Not
+};
+The provided code defines an enumeration class named StructuralSelectorType in C++. This enum class represents various structural pseudo-classes in CSS that are used to select elements based on their position or type within the DOM hierarchy. Let's break down each enumerator and provide comprehensive CSS examples for each.
+
+Breakdown of the Enum Class
+1. Invalid:
+Represents an invalid selector type. This can be used for error handling or to indicate that a selector is not recognized.
+Example
+: Not applicable as it's a placeholder.
+
+2. Nth_Child (:nth-child(n)):
+Matches elements based on their order among siblings. The n can be a number, keyword (like odd or even), or a formula (like 2n).
+CSS Example:
+li:nth-child(2) {
+  color: red; /* Styles the second <li> in a list */
+}
+
+3. Nth_Last_Child (:nth-last-child(n)):
+Matches elements based on their order among siblings, counting from the last child.
+CSS Example:
+li:nth-last-child(1) {
+  font-weight: bold; /* Styles the last <li> in a list */
+}
+
+4. Nth_Of_Type (:nth-of-type(n)):
+Matches elements of a specific type based on their order among siblings of the same type.
+CSS Example:
+p:nth-of-type(1) {
+  font-size: 20px; /* Styles the first <p> in a container */
+}
+
+5. Nth_Last_Of_Type (:nth-last-of-type(n)):
+Matches elements of a specific type based on their order among siblings of the same type, counting from the last.
+CSS Example:
+p:nth-last-of-type(2) {
+  color: green; /* Styles the second-to-last <p> in a container */
+}
+
+6. First_Child (:first-child):
+Matches the first child of a parent element.
+CSS Example:
+div:first-child {
+  background-color: yellow; /* Styles the first <div> inside a parent */
+}
+
+7. Last_Child (:last-child):
+Matches the last child of a parent element.
+CSS Example:
+div:last-child {
+  border: 1px solid black; /* Styles the last <div> inside a parent */
+}
+
+8. First_Of_Type (:first-of-type):
+Matches the first element of a specific type among its siblings.
+CSS Example:
+p:first-of-type {
+  text-decoration: underline; /* Styles the first <p> among its siblings */
+}
+
+9. Last_Of_Type (:last-of-type):
+Matches the last element of a specific type among its siblings.
+CSS Example:
+p:last-of-type {
+  font-style: italic; /* Styles the last <p> among its siblings */
+}
+
+10. Only_Child (:only-child):
+Matches an element that is the only child of its parent.
+CSS Example:
+div:only-child {
+  display: none; /* Hides a <div> if it's the only child in its parent */
+}
+
+11. Only_Of_Type (:only-of-type):
+Matches an element that is the only one of its type among its siblings.
+CSS Example:
+p:only-of-type {
+  color: orange; /* Styles a <p> if it's the only <p> among its siblings */
+}
+
+12. Empty (:empty):
+Matches elements that have no children (including text nodes).
+CSS Example:
+div:empty {
+  background-color: lightgray; /* Styles empty <div> elements */
+}
+
+13. Not (:not(selector)):
+Matches elements that do not match a specified selector.
+CSS Example:
+p:not(.special) {
+  color: gray; /* Styles all <p> elements that do not have the class 'special' */
+}
+
+Summary of CSS Examples
+Invalid: Placeholder for error handling.
+Nth_Child: li:nth-child(2) styles the second <li>.
+Nth_Last_Child: li:nth-last-child(1) styles the last <li>.
+Nth_Of_Type: p:nth-of-type(1) styles the first <p>.
+Nth_Last_Of_Type: p:nth-last-of-type(2) styles the second-to-last <p>.
+First_Child: div:first-child styles the first <div>.
+Last_Child: div:last-child styles the last <div>.
+First_Of_Type: p:first-of-type styles the first <p>.
+Last_Of_Type: p:last-of-type styles the last <p>.
+Only_Child: div:only-child hides a <div> if it's the only child.
+Only_Of_Type: p:only-of-type styles a <p> if it's the only one.
+Empty: div:empty styles empty <div> elements.
+Not: p:not(.special) styles <p> elements that are not special.
+
+Conclusion
+The StructuralSelectorType enum class provides a clear representation of various structural pseudo-classes in CSS, enabling precise selection of elements based on their position, type, and relationship within the DOM. Understanding these selectors is crucial for effective styling and layout in web development.
+
+\subsection{Selector Combinators}
+enum class SelectorCombinator {
+  Descendant,        // The 'E F' (whitespace) combinator: Matches if F is a descendant of E.
+  Child,             // The 'E > F' combinator: Matches if F is a child of E.
+  NextSibling,       // The 'E + F' combinator: Matches if F is immediately preceded by E.
+  SubsequentSibling, // The 'E ~ F' combinator: Matches if F is preceded by E.
+};
+
+The provided code defines an enumeration class named SelectorCombinator in C++. This enum class represents different types of combinators used in CSS selectors. Each enumerator corresponds to a specific relationship between elements in a document's structure. Let's break down each enumerator and provide CSS examples for each.
+
+
+Breakdown of the Enum Class
+1. Descendant (E F):
+This combinator matches elements that are descendants of a specified element. It means that the second element can be any level deep within the first element.
+CSS Example:
+div p {
+  color: blue; /* This will style all <p> elements that are inside any <div> */
+}
+
+2. Child (E > F):
+This combinator matches elements that are direct children of a specified element. The second element must be an immediate child of the first element.
+CSS Example:
+ul > li {
+  list-style-type: square; /* This will style only the <li> elements that are direct children of a <ul> */
+}
+
+3. NextSibling (E + F):
+This combinator matches an element that is immediately preceded by a specified element. The second element must be the next sibling of the first element.
+CSS Example:
+h1 + p {
+  margin-top: 0; /* This will style the <p> element that directly follows an <h1> */
+}
+
+4. SubsequentSibling (E ~ F):
+This combinator matches all elements that are preceded by a specified element, but not necessarily immediately. The second element can be any sibling that follows the first element.
+CSS Example:
+
+h2 ~ p {
+  color: green; /* This will style all <p> elements that follow an <h2> element, not just the first one */
+}
+
+
+
+Summary of CSS Examples
+
+Descendant: div p selects all <p> elements inside any <div>.
+Child: ul > li selects only the <li> elements that are direct children of a <ul>.
+NextSibling: h1 + p selects the first <p> element that follows an <h1>.
+SubsequentSibling: h2 ~ p selects all <p> elements that follow an <h2>.
+
+Conclusion
+The SelectorCombinator enum class provides a clear representation of different combinators used in CSS selectors, allowing for precise selection of elements based on their relationships in the document structure. Understanding these combinators is essential for effective styling and layout in web development.
+
+
+
+
+
+
+
+
+/* Combinator examples */
+div p { /* Descendant: Matches any <p> inside <div> */ }
+div > p { /* Child: Matches only <p> that are direct children of <div> */ }
+div + p { /* Next Sibling: Matches the first <p> immediately after a <div> */ }
+div ~ p { /* Subsequent Sibling: Matches all <p> that follow a <div> */ }
+
+
+\subsection{Attribute Selector}
+/* Attribute selector examples */
+input[type="text"] { /* Matches <input> elements with type="text" */ }
+a[href^="http"] { /* Matches <a> elements with href starting with "http" */ }
+img[alt~="logo"] { /* Matches <img> elements with alt attribute containing "logo" */ }
+
+The AttributeSelectorType enum defines different types of attribute selectors in CSS, which allow you to select elements based on their attributes and attribute values. Here’s a breakdown of each type along with examples. This says that if attribute of specified tag is equal or not equal or begins or ends with sth or etc, select that.
+1. Always (used in code)
+Description: This type is used to indicate that the attribute selector always matches, regardless of the attribute's value.
+Example: This is more of a conceptual type rather than a direct CSS selector.
+IN CODE rmlui uses AttributeSelectorType::Always enum value to indicate a initial value to this type of selector so when checking is there a attribute selector if we encounter AttributeSelectorType::Always value we know there is not any.
+
+2. Equal (=)
+Description: Matches elements with an attribute that has an exact value.
+Example:
+input[type="text"] {
+  /* Matches <input> elements where type is exactly "text" */
+}
+3. InList (~)
+Description: Matches elements with an attribute whose value is a space-separated list of words, one of which matches the specified value.
+Example:
+div[class~="highlight"] {
+  /* Matches <div> elements that have a class attribute containing "highlight" as one of the classes */
+}
+4. BeginsWithThenHyphen (|)
+Description: Matches elements with an attribute that starts with the specified value followed by a hyphen.
+Example:
+a[href|="en"] {
+  /* Matches <a> elements where href is "en" or starts with "en-" */
+}
+5. BeginsWith (^)
+Description: Matches elements with an attribute whose value begins with the specified value.
+Example:
+img[src^="https://"] {
+  /* Matches <img> elements where src starts with "https://" */
+}
+6. EndsWith (\$) (dollor sign)
+Description: Matches elements with an attribute whose value ends with the specified value.
+Example:
+a[href\$=".pdf"] {
+  /* Matches <a> elements where href ends with ".pdf" */
+}
+7. Contains (*)
+Description: Matches elements with an attribute whose value contains the specified value anywhere within it.
+Example:
+div[data-info*="important"] {
+  /* Matches <div> elements where data-info contains the word "important" */
+}
+Summary
+The AttributeSelectorType enum provides a way to create powerful and flexible selectors based on the attributes of HTML elements. By using these selectors, developers can target elements more precisely based on their attributes and values, enhancing the ability to style and manipulate elements in a web document.
+
+In code this is how attribute selectors are implemented.
+/**
+Attribute selector.
+
+Such as [unit], [unit=meter], [href^=http]
+*/
+enum class AttributeSelectorType {
+  Always,
+  Equal = '=',
+  InList = '~',
+  BeginsWithThenHyphen = '|',
+  BeginsWith = '^',
+  EndsWith = '$',
+  Contains = '*',
+};
+\subsection{Selector Specifity}
+Specificity in CSS is a mechanism that determines which styles are applied to an element when multiple rules could apply. It helps resolve conflicts between selectors by assigning a weight to each selector based on its components. Here’s a breakdown of its importance:
+
+1. Conflict Resolution: When multiple CSS rules apply to the same element, specificity helps determine which rule takes precedence. The rule with the highest specificity will be applied.
+
+2. Hierarchy of Selectors: Specificity allows for a clear hierarchy among different types of selectors. For example, IDs are more specific than classes, and classes are more specific than tags. This hierarchy helps developers manage styles effectively.
+
+3. Maintainability: Understanding specificity can help developers write more maintainable and predictable CSS. By knowing how specificity works, developers can avoid overly complex selectors and ensure that styles are applied as intended.
+
+4. Debugging: When styles are not applied as expected, understanding specificity can help identify why certain styles are overridden. This can make debugging CSS issues much easier.
+
+5. Performance: While specificity itself doesn't directly impact performance, using overly specific selectors can lead to more complex stylesheets that are harder to manage and may slow down rendering in some cases.
+
+In summary, specificity is crucial for controlling which styles are applied to elements, making CSS more predictable and easier to manage.
+
+when there are multiple ways to select an element, it may happen that there become ambigues to select an element that has multiple ways to select it. for example when we select an element using it's tag name and also we specifu a class name to it. In this situations we must use specifity of selectors to do sth with ambiguity. Usign specifity we say that when we have multiple ways to select an element, like when we have id name and class name and tag name and also tag name we must choose one with higher weight and priority. In this case the id has more weight than class name and class name has more priority that tag name.
+
+/* Specificity examples */
+div { /* Specificity: 10,000 (Tag) */ }
+.class-name { /* Specificity: 100,000 (Class) */ }
+#id-name { /* Specificity: 1,000,000 (ID) */ }
+
+These weights are defined in this code.
+
+namespace SelectorSpecificity {
+  enum {
+    Tag = 10'000,
+    Class = 100'000,
+    Attribute = Class,
+    PseudoClass = Class,
+    ID = 1'000'000,
+  };
+}
+\end{document}

@@ -1,0 +1,74 @@
+#+title: FUNDAMENTALS
+
+:COMMENT:
+The Book of Using and Integrating RmlUi Library.
+
+
+TOC
+
++ PART ONE: Introducing - RML/RCSS Only
+  - Chapter One: Overview, History, Competitors. The importance of user interface in applications. Talking about how other APIs are created and their overall architecture. Their pros and cons. talking about the power of HTML and how RmlUi uses that power in creating UI. pros and cons of using HTML. talking about how browsers work and how RmlUi works. the architecture of RmlUi and how we need a browser like application to create user interface. HTML is about structure and CSS is about styling that structure and JavaScript is about giving life to the page and their correspondence to them in RmlUi. also about ui/ux in brief. although rmlui is game centeric but we will focus our talks on general purpose applications as well as games' user interface.
+  - Chapter Two: Simple Example and how RmlUi runs that to show rml file structure, rcss file, elements, tags, attributes, properties and etc. talking about that RmlUi doesn't have default style for each element. internal, external and inline styling. the overall structure of a rml and rcss file. rml, body, head, script, etc and how they are ordered. There is a c++ code that runs to executes the rml files. talking about style. this chapter is about introducing high level concepts in a running simple example. concepts of just rml and css file.
+  - Chapter Three: Elements & Selection. DOM, elements flow, selecting elements by id, class, tag name, etc.
+  - Chapter Four: Layout. Box model and measurements, layouts
+
++ PART TWO: Introducing C++
+  - CHAPTER FIVE: C PLUS PLUS:Introducing C++ part of RmlUi. It's architecture, interfaces. main loop.
+  - Chapter : User input. mouse keyboard. text input.
+
++ PART THREE: Continue to advanced topics with this knowledge that reader knows how RML/RCSS part and c++ part of RmlUi works together.
+  - images and sprites
+  - events
+  - Fonts, Text and special characters, Multilingual. (c++ + rml/css)
+  - Templates
+  - data model
+  - decorators
+  - animation
+  - drag and drop
+  - filters
+  - Lua
+  - Debugger
+  - Lottie
+  - SVG
+
+Book Outline:
+- Chapter 01:
+- Chapter 02:
+- Chapter 03:
+- Chapter 04:
+- Chapter 05:
+- Chapter 06:
+- Chapter 07:
+- Chapter 08:
+- Chapter 09:
+- Chapter 10:
+- Chapter 11:
+- Chapter 12:
+:END:
+
+
+This book is structured to reflect the architecture described above.
+
+The early chapters focus on RML and RCSS, treating the runtime and host as a given system. This allows us to explore layout, styling, and interaction without distraction.
+
+Only when declarative UI reaches its limits do we cross the boundary into C++, examine the host responsibilities, and explain how RmlUi integrates with an application.
+
+The second part of the book then explores the internals of RmlUi for readers who want to understand or extend the library itself.
+
+With this foundation in place, we can now begin working directly with RmlUi’s UI language.
+
+
+Table of Contents:
+[[file:./rmlui---fundamentals---chapter_01---.org][CHAPTER   ZERO: Reculer pour Mieux Sauter]]
+[[file:./rmlui---fundamentals---chapter_01---everybody_this_is_rmlui.org][CHAPTER    ONE: Everybody, This is RmlUi]]
+[[file:./rmlui---fundamentals---chapter_02---.org][CHAPTER    TWO:]]
+[[file:./rmlui---fundamentals---chapter_03---.org][CHAPTER  THREE:]]
+[[file:./rmlui---fundamentals---chapter_04---.org][CHAPTER   FOUR:]]
+[[file:./rmlui---fundamentals---chapter_05---.org][CHAPTER   FIVE:]]
+[[file:./rmlui---fundamentals---chapter_06---.org][CHAPTER    SIX:]]
+[[file:./rmlui---fundamentals---chapter_07---.org][CHAPTER  SEVEN:]]
+[[file:./rmlui---fundamentals---chapter_08---.org][CHAPTER  EIGHT:]]
+[[file:./rmlui---fundamentals---chapter_09---.org][CHAPTER   NINE:]]
+[[file:./rmlui---fundamentals---chapter_10---.org][CHAPTER    TEN:]]
+[[file:./rmlui---fundamentals---chapter_11---.org][CHAPTER ELEVEN:]]
+[[file:./rmlui---fundamentals---chapter_12---.org][CHAPTER TWELVE:]]

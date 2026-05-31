@@ -1,0 +1,23 @@
+\documentclass[tikz, border = 5pt]{article}
+\usepackage{packages/tikz-uml}
+\usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds,calc}
+\usepackage{geometry}
+\geometry{a2paper}
+\geometry{landscape}
+
+\begin{document}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[
+    step=1cm,
+    gray!25,
+    very thin
+  ]
+  (current page.south west)
+    grid
+  (current page.north east);
+\end{tikzpicture}
+\begin{tikzpicture}
+  \input{xml_parser}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,39 @@
+#+TITLE: Fundamental Mathematics for Game Development
+
+#+BEGIN_QUOTE
+Mathematics is the language in which God has written the universe.
+- Galileo Galilei
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+We do not create mathematics; we discover it.
+— Henri Poincaré
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Mathematics is a tool for reasoning.
+— Richard Feynman
+#+END_QUOTE
+
+Mathematics, in its essence, independent of the notational language we see in books, appears to be the backbone of the real world. Whether viewed as a language, the rule book of the universe, or a tool for reasoning, it remains the most reliable instrument we have. It allows us to describe reality, predict its behavior, and even simulate aspects of it.
+
+Beyond philosophical insights about math, it may be more useful from a practical perspective to think of mathematics as a toolbox. Whenever we face a problem, we reach into this toolbox and select the appropriate tool set to solve it. If no such tool set exists, we innovate and create one. This is how mathematics has developed over centuries of human history.
+
+Yet the real world is immensely detailed and complex. To bridge this gap, we rely on computers, which are extraordinarily powerful at performing mathematical computations at high speed.
+
+In games, we harness the power of both computers and mathematics to create worlds that, in some way, resemble the one we live in. Regardless of the type of game or where it lies on the spectrum of complexity, we must always have a set of mathematical tools at our disposal.
+
+To bring a virtual world to life, we must first describe it mathematically—its objects and the rules that govern them. We then feed these descriptions into the computer, which understands only mathematics, so it can compute and render the images we see.
+
+Three fundamental branches of mathematics form the backbone of most game systems: linear algebra, calculus, and probability.
+
++ *Linear algebra* is fundamentally about spaces and certain special kinds of equations. One of the first and most important problems in game development is to describe the game world and its elements mathematically, and to arrange those elements within the world. The second is to handle the interactions between these elements by solving equations. Both of these problems are solved using the mathematical toolset of linear algebra. how and where the collision happens
+
++ *Calculus* gives objects realistic motion. To model speed, acceleration, continuous change, and other physical aspects of the game world and its elements, we use the calculus toolset of mathematics. what happens after collision
+
++ *Probability* add uncertainty and variation, making the world behave less like a machine and more like the one we live in.
+
+
+* [[file:./math__linear_algebra.org][Volume I: Linear Algebra]]
+* [[file:./math__calculus.org][Volume II: Calculus]]
+* [[file:./math__probability.org][Volume III: Probability]]

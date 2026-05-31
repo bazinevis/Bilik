@@ -1,0 +1,17 @@
+\NewDocumentCommand{\classbox}{ m m m }{%
+  \begin{center}
+    \tikz \node[
+    draw,
+    rectangle,
+    rounded corners,
+    inner sep=6pt,
+    font=\ttfamily\small
+    ] {
+      \begin{tabular}{@{}l@{}}
+        \multicolumn{1}{c}{\textbf{#1}} \\ \hline
+        #2 \\ \hline
+        #3
+      \end{tabular}
+    };
+  \end{center}
+}

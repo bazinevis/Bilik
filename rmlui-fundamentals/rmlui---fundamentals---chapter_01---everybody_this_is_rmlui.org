@@ -1,0 +1,50 @@
+* Chapter One: Everybody, This is RmlUI
+the importance of user interface in nutshell ...
+
+The user interface (UI) collects user input and passes it to the underlying system, and in return, presents the application’s output back to the user. In this sense, it functions as both the face of the application and the primary bridge between the user and the system’s logic.
+
+in this chapter we will ....
+
+more on html and css and how they together do the job also about javascript and it's equivalent in rmlui which is lua.
+
+this chapter is about how rmlui shows the ui and it's high level architecture.
+
+how rmlui is retained mode and also it's pitfalls and saying that in compare to other ui libraries like Qt, rmlui is not mature enough and well documented and also made with games first thinking in mind of developers.
+
+to dive more on html and css.
+
+why they call it CSS cascade sheet?
+
+** Where RmlUi Fits
+
+RmlUi is a retained-mode UI framework that adopts the *declarative strengths* of the web model without adopting the browser itself.
+
+Its defining characteristics include:
+
+- Declarative UI structure using RML
+- Declarative styling using RCSS
+- A retained element tree
+- Explicit responsibility placed on the host application
+- No built-in scripting engine
+- Renderer-agnostic design
+
+Unlike web-based systems, RmlUi does not expose a mutable DOM controlled by scripts. Instead, interaction between the UI and the application is explicit and intentional. This design prioritizes predictability, performance, and control.
+
+---
+
+*** 1.7 High-Level RmlUi Architecture
+
+At a high level, RmlUi can be viewed as three layers:
+
+- The *UI description layer* (RML and RCSS)
+- The *RmlUi runtime*, which evaluates documents, computes layout, dispatches events, and generates render data
+- The *host application*, which provides rendering, input, timing, and file access
+
+Conceptually, the data flow looks like this:
+
+RML / RCSS → RmlUi Runtime → Host Interfaces → Rendering Backend
+
+The runtime is self-contained, but it depends on the host application for all platform-specific functionality.
+
+---
+talking about interfaces that user must implement like system, render, etc
