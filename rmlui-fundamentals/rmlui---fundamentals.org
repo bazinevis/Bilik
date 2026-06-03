@@ -56,6 +56,80 @@ Book Outline:
 :END:
 
 
+
+
+
+
+
+
+Book Outline:
+- Chapter 01: Reculer pour mieux sauter
+              Some conceptual things about user interface that may help knowing
+              them like retained mode and immediate mode and etc. About
+              importance of user interface and also about common user interface
+              libraries architectures.
+- Chapter 02: The Big Picture
+              How RmlUi is architectured and how it defines and also runs a user
+              interface. more about rcss and cascade of properties and concepts
+              like this that relate specifically to RmlUi. no samples, just about
+              how running happens and the requirements like defining interfaces
+              and rml and rcss files. just high level. in this chapter i will tell
+              that Rmlui is two part, cpp part and rml/rcss part. high level 
+              overview if these two parts and their pieces. i will also say that
+              cpp part that our samples will work on will be introduced later.
+- Chapter 03: The Building Blocks of UI
+              This is where code begins. maybe a minimal working sample.
+              Introducing the anatomy of a RML/RCSS file. it's parts and how they
+              relate to each other. about selectors and how we user them to find
+              the element to style. about DOM.
+- Chapter 04: Laying Out the Pieces
+              about the elements flow. inline vs block level elements.
+              about multiple ways of laying out the elements. like flex, grid
+              with working samples. about box model. margin padding border etc
+- Chapter 05: Learn By Sample (basic)
+              Introducing tags and their properties. Images, sprite, fonts,
+              templates, decorators, filters. showing a simple sample that
+              uses an specific element. this chapter will be huge too and
+              i will break it up into two simple and advanced parts later.
+- Chapter 06: A Working Big Project
+              I am thinking about providing a note taking application from
+              zero to a working one.
+- Chapter 07: C++ Part
+              This is where C++ part of RmlUi is going to be introduced.
+              Interfaces, user input, resources, etc. until now from chapter
+              one to this all samples were working on a simple but complete
+              C++ application that we will going to be introduce here in depth.
+              from now on we will change it as we go further. i mean from now
+              on that we work on more advanced concepts that need C++ part to
+              be manipulated we will change that part too. like when we work
+              on data models.
+- Chapter 08: Bringing Interfaces to Life
+              Mouse events, Keyboard events, Focus, Event propagation, Event
+              listeners, Custom events, Connecting UI to application logic
+- Chapter 09: Make UI Interactive
+              elements like button, progress bar and others that need both c++ 
+              and rml file manipulation.
+- Chapter 10: Another Working Big Project
+              A project that has elements that need events and both cpp and rml
+              side manipulation. maybe making note taking application that we
+              already worked on a better one or maybe another project.
+- Chapter 11: data models
+- Chapter 12: animation
+- Chapter 13: Extending RmlUi
+              Custom elements. Custom decorators. Custom data sources. Engine integration
+- Chapter 14: Large-Scale Interfaces
+              Performance, Debugging, Architecture, Reusable UI systems, Best practices
+
+
+
+
+
+
+
+
+
+
+
 This book is structured to reflect the architecture described above.
 
 The early chapters focus on RML and RCSS, treating the runtime and host as a given system. This allows us to explore layout, styling, and interaction without distraction.
