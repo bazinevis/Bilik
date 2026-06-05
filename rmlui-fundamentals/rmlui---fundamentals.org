@@ -43,24 +43,22 @@ TOC
 - Chapter 04: Laying Out the Pieces
               about the elements flow. inline vs block level elements. about multiple ways of laying out the elements. like flex, grid with working samples. about box model. margin padding border etc
 - Chapter 05: Exploring Elements
-              Introducing tags and their properties. Images, sprite, fonts, templates, decorators, filters. showing a simple sample that uses an specific element. these tags like div will be the ones that don't need any events. just static tags. like images. fonts, etc. till now we didn't explain events yet so we can't use them here.
+              Introducing tags and their properties. Images, sprite, fonts, templates, decorators, filters. showing a simple sample that uses an specific element. these tags like div will be the ones that don't need any events. just static tags. like images. fonts, etc. till now we didn't explain events yet so we can't use them here. elements like buttons and others that need events to work, will be shown, i mean like their style not their actual job to do sth. their actual work will postponed till i introduce c++ side and also events or maybe just use their default events. i mean this chapter is about elements and their styles.
 - Chapter 06: Let's Make Something Useful
               I am thinking about providing a note taking application from zero to a working one. or may be another project that can be implemented without events or to better say without user defined events using just static tags.
 - Chapter 07: Under the Hood
               This is where C++ part of RmlUi is going to be introduced. Interfaces, user input, resources, etc. until now from chapter one to this all samples were working on a simple but complete C++ application that we will going to be introduce here in depth. from now on we will change it as we go further. i mean from now on that we work on more advanced concepts that need C++ part to be manipulated we will change that part too. like when we work on data models.
-- Chapter 08: Events: When Interfaces React
-              Mouse events, Keyboard events, Focus, Event propagation, Event listeners, Custom events, Connecting UI to application logic
-- Chapter 09: Interactive Elements
-              elements like button, progress bar and others that need both c++ and rml file manipulation.
-- Chapter 10: Putting It All Together
+- Chapter 08: Interaction with Events
+              Mouse events, Keyboard events, Focus, Event propagation, Event listeners, Custom events, Connecting UI to application logic. in this chapter i will talk about how interactive elements like buttons and progress bars work with events in collaboration of both rml side and c++ side.
+- Chapter 09: Putting It All Together
               A project that has elements that need events and both cpp and rml side manipulation. maybe making note taking application that we already worked on a better one or maybe another project.
-- Chapter 11: Data and Interfaces
+- Chapter 10: Data and Interfaces
               about data models in rmlui
-- Chapter 12: Animation
+- Chapter 11: Animation
               about animation in rmlui
-- Chapter 13: Extending RmlUi
+- Chapter 12: Extending RmlUi
               Custom elements. Custom decorators. Custom data sources. Engine integration
-- Chapter 14: Large-Scale Interfaces
+- Chapter 13: Large-Scale Interfaces
               Performance, Debugging, Architecture, Reusable UI systems, Best practices
 :END:
 

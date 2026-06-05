@@ -1,0 +1,5 @@
+#+title:
+
+:COMMENT:
+In this chapter we will show a simple sample and based on that we will explain some fundamental concepts in RmlUi. This sample should be simple as well as containing almost all important elements and styles and overall structure.
+:END:
