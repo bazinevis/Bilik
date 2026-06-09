@@ -1,0 +1,155 @@
+* Chapter 1: Axioms of Probability
+** 1.1 Introduction
+
+*** Random, Certain, and Impossible Events
+
+- *Random Event*: May or may not occur.
+  - Example: A radioactive atom may or may not decay during a given time interval.
+  - Example: An inspector may or may not find a defect in a product.
+
+- *Certain Event*: Guaranteed to occur.
+  - Example: Lightning is observed before thunder is heard.
+
+- *Impossible Event*: Can never occur.
+  - Example: An object traveling faster than the speed of light.
+
+*** Why Probability Is Needed
+
+Knowing that an event is random is not enough. We want to measure *how likely* it is to occur.
+
+Observation:
+- When an experiment is repeated many times, the proportion of occurrences of an event often approaches a constant value.
+- Probability is used to describe this long-run behavior.
+
+Example:
+- Repeatedly tossing a fair coin results in the proportion of heads approaching 1/2.
+- Therefore, P(Heads) = 1/2.
+
+*** Historical Background
+
+Probability originated from the study of games of chance and gambling.
+
+Important contributors:
+
+- :contentReference[oaicite:0]{index=0} (لوکا پاچیولی)
+  - Italian mathematician and Franciscan friar.
+  - Known as the “father of accounting.”
+  - Early contributor to systematic thinking about games of chance.
+
+- :contentReference[oaicite:1]{index=1} (نیکولو تارتالیا)
+  - Self-taught mathematician from Italy.
+  - Known for solving cubic equations.
+  - Worked on applied mathematics including mechanics.
+
+- :contentReference[oaicite:2]{index=2} (جیرولامو کاردانو)
+  - Physician, mathematician, and philosopher.
+  - First to write systematically about probability in gambling.
+  - Introduced early ideas of expected value.
+
+- :contentReference[oaicite:3]{index=3} (گالیلئو گالیله)
+  - Founder of modern experimental science.
+  - Studied mechanics and astronomy.
+  - Solved probability puzzles related to dice outcomes.
+
+Major milestone:
+
+- :contentReference[oaicite:4]{index=4} (بلز پاسکال)
+  - French mathematician, physicist, and philosopher.
+  - Co-founded probability theory in correspondence with Fermat.
+  - Known for Pascal’s Triangle and work in decision theory.
+
+- :contentReference[oaicite:5]{index=5} (پیر دو فرما)
+  - One of the founders of modern number theory.
+  - Collaborated with Pascal on probability problems.
+  - Known for Fermat’s Last Theorem.
+
+- :contentReference[oaicite:6]{index=6} (کریستیان هویگنس)
+  - Dutch scientist and astronomer.
+  - Published the first formal book on probability in 1657.
+  - Worked on optics and mechanics.
+
+Further development:
+
+- :contentReference[oaicite:7]{index=7} (یاکوب برنولی)
+  - Swiss mathematician from the Bernoulli family.
+  - Developed the Law of Large Numbers.
+  - Key figure in early probability theory.
+
+- :contentReference[oaicite:8]{index=8} (آبراهام د موآور)
+  - Worked on probability and complex numbers.
+  - Developed early forms of the normal distribution.
+  - Known for de Moivre’s formula.
+
+- :contentReference[oaicite:9]{index=9} (لاپلاس)
+  - Developed Laplace transform and Bayesian ideas.
+  - Applied probability to celestial mechanics.
+  - Wrote Théorie Analytique des Probabilités.
+
+- :contentReference[oaicite:10]{index=10} (پواسون)
+  - Contributed to mathematical physics and probability.
+  - Introduced Poisson distribution.
+  - Worked on electricity and mechanics.
+
+- :contentReference[oaicite:11]{index=11} (گاوس)
+  - Called the “Prince of Mathematicians.”
+  - Developed Gaussian distribution.
+  - Major contributions to number theory and statistics.
+
+- :contentReference[oaicite:12]{index=12} (چبیشف)
+  - Founder of Russian mathematical school.
+  - Developed Chebyshev inequality.
+  - Work foundational in probability bounds.
+
+- :contentReference[oaicite:13]{index=13} (مارکوف)
+  - Developed Markov chains.
+  - Pioneered stochastic process theory.
+  - Extended probability to dependent events.
+
+- :contentReference[oaicite:14]{index=14} (لیا‌پونوف)
+  - Developed stability theory in dynamical systems.
+  - Contributed to central limit theorem refinements.
+  - Important in mathematical physics and probability.
+
+*** Relative Frequency Interpretation
+
+Probability was often defined as:
+
+#+begin_quote
+p = lim_{n→∞} n(A)/n
+#+end_quote
+
+where:
+- n(A) = number of times event A occurs
+- n = number of repetitions of the experiment
+
+Interpretation:
+- Probability is the limiting proportion of times an event occurs in repeated experiments.
+
+*** Problems with the Frequency Definition
+
+1. Infinite experiments cannot be performed in practice.
+2. The limit may not exist.
+3. Subjective probabilities cannot be justified.
+
+*** Hilbert's Challenge
+
+In 1900, David Hilbert presented 23 important mathematical problems.
+One of them was to build a rigorous axiomatic foundation for probability.
+
+*** Kolmogorov's Axiomatic Approach (1933)
+
+Andrey Kolmogorov successfully established the modern foundation of probability.
+
+Key idea:
+- Begin with a small set of self-evident axioms.
+- Derive all probability theory logically from these axioms.
+
+Advantages:
+- Mathematical rigor
+- Works beyond frequency interpretation
+- Supports both frequentist and subjective probability
+
+*** Main Takeaway
+
+Probability provides a mathematical framework for uncertainty.
+Kolmogorov’s axioms form the modern foundation of probability theory.
