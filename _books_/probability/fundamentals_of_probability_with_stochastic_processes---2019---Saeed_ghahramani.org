@@ -31,125 +31,42 @@ Probability originated from the study of games of chance and gambling.
 
 Important contributors:
 
-- :contentReference[oaicite:0]{index=0} (لوکا پاچیولی)
-  - Italian mathematician and Franciscan friar.
-  - Known as the “father of accounting.”
-  - Early contributor to systematic thinking about games of chance.
-
-- :contentReference[oaicite:1]{index=1} (نیکولو تارتالیا)
-  - Self-taught mathematician from Italy.
-  - Known for solving cubic equations.
-  - Worked on applied mathematics including mechanics.
-
-- :contentReference[oaicite:2]{index=2} (جیرولامو کاردانو)
-  - Physician, mathematician, and philosopher.
-  - First to write systematically about probability in gambling.
-  - Introduced early ideas of expected value.
-
-- :contentReference[oaicite:3]{index=3} (گالیلئو گالیله)
-  - Founder of modern experimental science.
-  - Studied mechanics and astronomy.
-  - Solved probability puzzles related to dice outcomes.
+- [[id:e2f2b685-7e75-47bc-aaf0-d71dc69930a0][Luca Pacioli]]
+- [[id:9d9049f2-58da-43f8-9d52-ceb355def8eb][Niccolò Tartaglia]]
+- [[id:1ab0fefd-de9a-4307-897b-79d25d77e2c9][Girolamo Cardano]]
+- [[id:868d2eff-0abe-47e5-b770-238e255ed053][Galileo Galilei]]
 
 Major milestone:
-
-- :contentReference[oaicite:4]{index=4} (بلز پاسکال)
-  - French mathematician, physicist, and philosopher.
-  - Co-founded probability theory in correspondence with Fermat.
-  - Known for Pascal’s Triangle and work in decision theory.
-
-- :contentReference[oaicite:5]{index=5} (پیر دو فرما)
-  - One of the founders of modern number theory.
-  - Collaborated with Pascal on probability problems.
-  - Known for Fermat’s Last Theorem.
-
-- :contentReference[oaicite:6]{index=6} (کریستیان هویگنس)
-  - Dutch scientist and astronomer.
-  - Published the first formal book on probability in 1657.
-  - Worked on optics and mechanics.
+- [[id:0f8b1b88-ea8c-47ea-bdf7-222d4d3bfb3b][Blaise Pascal]]
+- [[id:4fb110d7-50d7-4ba9-ba04-aca431cea25d][Pierre de Fermat]]
+- [[id:8d452eaa-d909-4c35-a46a-d203bf85a884][Christiaan Huygens]]
 
 Further development:
-
-- :contentReference[oaicite:7]{index=7} (یاکوب برنولی)
-  - Swiss mathematician from the Bernoulli family.
-  - Developed the Law of Large Numbers.
-  - Key figure in early probability theory.
-
-- :contentReference[oaicite:8]{index=8} (آبراهام د موآور)
-  - Worked on probability and complex numbers.
-  - Developed early forms of the normal distribution.
-  - Known for de Moivre’s formula.
-
-- :contentReference[oaicite:9]{index=9} (لاپلاس)
-  - Developed Laplace transform and Bayesian ideas.
-  - Applied probability to celestial mechanics.
-  - Wrote Théorie Analytique des Probabilités.
-
-- :contentReference[oaicite:10]{index=10} (پواسون)
-  - Contributed to mathematical physics and probability.
-  - Introduced Poisson distribution.
-  - Worked on electricity and mechanics.
-
-- :contentReference[oaicite:11]{index=11} (گاوس)
-  - Called the “Prince of Mathematicians.”
-  - Developed Gaussian distribution.
-  - Major contributions to number theory and statistics.
-
-- :contentReference[oaicite:12]{index=12} (چبیشف)
-  - Founder of Russian mathematical school.
-  - Developed Chebyshev inequality.
-  - Work foundational in probability bounds.
-
-- :contentReference[oaicite:13]{index=13} (مارکوف)
-  - Developed Markov chains.
-  - Pioneered stochastic process theory.
-  - Extended probability to dependent events.
-
-- :contentReference[oaicite:14]{index=14} (لیا‌پونوف)
-  - Developed stability theory in dynamical systems.
-  - Contributed to central limit theorem refinements.
-  - Important in mathematical physics and probability.
++ [[id:ee53a30c-865f-40d6-8be8-82b5a2d00a65][Jacob Bernoulli]]
++ [[id:474a1bae-4db3-4d8c-aadc-4d6784b9fbd6][Abraham de Moivre]]
++ [[id:5f652070-86c2-4b84-b642-96d5c9e5f98d][Pierre-Simon Laplace]]
++ [[id:016f1235-97e4-434d-aa23-e251bb58b017][Siméon Denis Poisson]]
++ [[id:a5cfd4bd-e681-478f-b0c3-35de9404d77d][Carl Friedrich Gauss]]
++ [[id:1a44bef3-83f5-42f5-82cf-f8d69db25027][Pafnuty Chebyshev]]
++ [[id:14801278-45c9-41ff-af30-7d9bf8dd9119][Andrey Markov]]
++ [[id:78c517d0-9ea7-4115-b4a9-d7c1c8f652d4][Aleksandr Lyapunov]]
 
 *** Relative Frequency Interpretation
-
-Probability was often defined as:
 
 #+begin_quote
 p = lim_{n→∞} n(A)/n
 #+end_quote
 
-where:
-- n(A) = number of times event A occurs
-- n = number of repetitions of the experiment
-
-Interpretation:
-- Probability is the limiting proportion of times an event occurs in repeated experiments.
-
 *** Problems with the Frequency Definition
-
 1. Infinite experiments cannot be performed in practice.
 2. The limit may not exist.
 3. Subjective probabilities cannot be justified.
 
 *** Hilbert's Challenge
-
-In 1900, David Hilbert presented 23 important mathematical problems.
-One of them was to build a rigorous axiomatic foundation for probability.
+[[id:fbc9a8bd-b0c4-4f91-8807-5dbba9aeef9d][David Hilbert]] proposed axiomatizing probability in 1900.
 
 *** Kolmogorov's Axiomatic Approach (1933)
-
-Andrey Kolmogorov successfully established the modern foundation of probability.
-
-Key idea:
-- Begin with a small set of self-evident axioms.
-- Derive all probability theory logically from these axioms.
-
-Advantages:
-- Mathematical rigor
-- Works beyond frequency interpretation
-- Supports both frequentist and subjective probability
+[[id:529775ce-f3c0-49da-8fe4-245f0d6efef4][Andrey Kolmogorov]] built the modern axiomatic foundation of probability.
 
 *** Main Takeaway
-
-Probability provides a mathematical framework for uncertainty.
-Kolmogorov’s axioms form the modern foundation of probability theory.
+Probability provides a rigorous framework for uncertainty using axioms.

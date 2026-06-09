@@ -1,0 +1,99 @@
+* Luca Pacioli (لوکا پاچیولی)
+:PROPERTIES:
+:ID:       e2f2b685-7e75-47bc-aaf0-d71dc69930a0
+:END:
+Italian Renaissance mathematician and Franciscan friar. Known as one of the earliest thinkers to formalize ideas related to chance and accounting. His work laid early foundations for structured mathematical reasoning. Known as the “father of accounting.”
+
+* Niccolò Tartaglia (نیکولو تارتالیا)
+:PROPERTIES:
+:ID:       9d9049f2-58da-43f8-9d52-ceb355def8eb
+:END:
+Italian mathematician who contributed to algebra and mechanics. He is known for solving cubic equations and applying mathematics to physical problems, influencing early quantitative reasoning. Self-taught mathematician from Italy.
+
+* Girolamo Cardano (جیرولامو کاردانو)
+:PROPERTIES:
+:ID:       1ab0fefd-de9a-4307-897b-79d25d77e2c9
+:END:
+Italian physician and mathematician. He wrote one of the first systematic studies of probability in gambling, introducing early ideas of expected value in games of chance.
+
+* Galileo Galilei (گالیلئو گالیله)
+:PROPERTIES:
+:ID:       868d2eff-0abe-47e5-b770-238e255ed053
+:END:
+Italian scientist who founded modern experimental physics. He also analyzed probability-related problems such as dice outcomes, applying mathematical reasoning to uncertainty.
+
+* Blaise Pascal (بلز پاسکال)
+:PROPERTIES:
+:ID:       0f8b1b88-ea8c-47ea-bdf7-222d4d3bfb3b
+:END:
+French mathematician and philosopher. Co-founder of probability theory through correspondence with Fermat. Also known for Pascal’s Triangle and early work in decision theory.
+
+* Pierre de Fermat (پیر دو فرما)
+:PROPERTIES:
+:ID:       4fb110d7-50d7-4ba9-ba04-aca431cea25d
+:END:
+French mathematician and pioneer of number theory. He collaborated with Pascal on probability problems arising from gambling questions. Known for Fermat’s Last Theorem
+
+* Christiaan Huygens (کریستیان هویگنس)
+:PROPERTIES:
+:ID:       8d452eaa-d909-4c35-a46a-d203bf85a884
+:END:
+Dutch mathematician who wrote the first book on probability theory in 1657, formalizing early concepts of expected value.
+
+* Jacob Bernoulli (یاکوب برنولی)
+:PROPERTIES:
+:ID:       ee53a30c-865f-40d6-8be8-82b5a2d00a65
+:END:
+Swiss mathematician who formulated the Law of Large Numbers, showing how probabilities emerge from repeated trials.
+
+* Abraham de Moivre (آبراهام د موآور)
+:PROPERTIES:
+:ID:       474a1bae-4db3-4d8c-aadc-4d6784b9fbd6
+:END:
+French mathematician known for early work on the normal distribution and contributions to probability approximations.
+
+* Pierre-Simon Laplace (لاپلاس)
+:PROPERTIES:
+:ID:       5f652070-86c2-4b84-b642-96d5c9e5f98d
+:END:
+French mathematician who systematized probability theory and extended it to astronomy, physics, and Bayesian reasoning.
+
+* Siméon Denis Poisson (پواسون)
+:PROPERTIES:
+:ID:       016f1235-97e4-434d-aa23-e251bb58b017
+:END:
+French mathematician who introduced the Poisson distribution and contributed to mathematical physics.
+
+* Carl Friedrich Gauss (گاوس)
+:PROPERTIES:
+:ID:       a5cfd4bd-e681-478f-b0c3-35de9404d77d
+:END:
+German mathematician known for the Gaussian (normal) distribution and major contributions to statistics and number theory.
+
+* Pafnuty Chebyshev (چبیشف)
+:PROPERTIES:
+:ID:       1a44bef3-83f5-42f5-82cf-f8d69db25027
+:END:
+Russian mathematician who developed inequalities and bounds that became fundamental in probability theory.
+
+* Andrey Markov (مارکوف)
+:PROPERTIES:
+:ID:       14801278-45c9-41ff-af30-7d9bf8dd9119
+:END:
+Russian mathematician who introduced Markov chains and the theory of stochastic processes with dependent events.
+
+* Aleksandr Lyapunov (لیا‌پونوف)
+:PROPERTIES:
+:ID:       78c517d0-9ea7-4115-b4a9-d7c1c8f652d4
+:END:
+Russian mathematician known for stability theory and contributions to limit theorems in probability and dynamical systems.
+
+* David Hilbert
+:PROPERTIES:
+:ID:       fbc9a8bd-b0c4-4f91-8807-5dbba9aeef9d
+:END:
+
+* Andrey Kolmogorov
+:PROPERTIES:
+:ID:       529775ce-f3c0-49da-8fe4-245f0d6efef4
+:END:
