@@ -1,4 +1,6 @@
 * Chapter 1: Axioms of Probability
+
+* TODO IF WE KNOW EVERY INFORMATION TO CALCULATE AN EVENT WE DON'T NEED PROBABILITY. BECAUSE WE DON'T KNOW EVERY DETAILS ABOUT AN EVENT WE NEED PROBABILITY TO ESTIMATE IT. PROBABILITY IS A CALCULATION WHEN WE DON'T HAVE ENOUGH KNOWLEDGE. 
 ** 1.1 Introduction
 
 *** Random, Certain, and Impossible Events
@@ -50,6 +52,8 @@ Further development:
 + [[id:1a44bef3-83f5-42f5-82cf-f8d69db25027][Pafnuty Chebyshev]]
 + [[id:14801278-45c9-41ff-af30-7d9bf8dd9119][Andrey Markov]]
 + [[id:78c517d0-9ea7-4115-b4a9-d7c1c8f652d4][Aleksandr Lyapunov]]
+
+* TODO THERE ARE THREE? INTERPRETATION OF PROBABILITY. NAME THEM
 
 *** Relative Frequency Interpretation
 
