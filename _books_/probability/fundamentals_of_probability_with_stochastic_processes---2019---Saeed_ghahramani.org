@@ -74,3 +74,305 @@ p = lim_{n→∞} n(A)/n
 
 *** Main Takeaway
 Probability provides a rigorous framework for uncertainty using axioms.
+
+** 1.2 Sample Space and Events
+
+*** Sample Space
+- The *sample space* (S) is the set of all possible outcomes of an experiment.
+- Each outcome is called a *sample point*.
+
+Examples:
+- Coin toss: S = {H, T}
+- Lifetime of a light bulb: S = {x : x ≥ 0}
+- Family genders, bus arrival times, round-off errors, etc.
+
+*** Events
+- An *event* is any subset of the sample space.
+- An event occurs when the observed outcome belongs to that subset.
+
+Examples:
+- Coin toss: {H} = getting heads.
+- Light bulb lifetime ≥ 100 hours.
+- Bus arrives with 27 passengers between specific times.
+
+*** Different Representations
+- The same experiment can have different sample-space representations.
+- Example:
+  - Bus arrival time measured in hours.
+  - Bus arrival time measured in minutes after 11:00.
+- Different representations describe the same outcomes.
+
+*** Basic Event Operations
+
+**** Subset
+- E ⊆ F means:
+  - Whenever E occurs, F also occurs.
+
+**** Equality
+- E = F if:
+  - E ⊆ F and F ⊆ E.
+
+**** Intersection
+- E ∩ F (or EF)
+- Occurs when both E and F occur.
+
+**** Union
+- E ∪ F
+- Occurs when at least one of E or F occurs.
+
+**** Complement
+- Eᶜ
+- Occurs when E does not occur.
+
+**** Difference
+- E − F
+- Occurs when E occurs but F does not.
+- E − F = EFᶜ
+
+**** Certain Event
+- Event that always occurs.
+- The sample space S itself.
+
+**** Impossible Event
+- Event that can never occur.
+- The empty set ∅.
+
+**** Mutually Exclusive Events
+- Events that cannot occur together.
+- E and F are mutually exclusive if:
+  - E ∩ F = ∅
+
+*** Operations on Collections of Events
+
+**** Union of Many Events
+- ⋃ Ei
+- At least one Ei occurs.
+
+**** Intersection of Many Events
+- ⋂ Ei
+- All Ei occur simultaneously.
+
+*** Example: Airport Queue
+Let:
+- E = at least 5 planes waiting.
+- F = at most 3 planes waiting.
+- H = exactly 2 planes waiting.
+
+Results:
+- Eᶜ = at most 4 planes waiting.
+- Fᶜ = at least 4 planes waiting.
+- E ⊆ Fᶜ
+- H ⊆ F
+- E and F are mutually exclusive.
+- E and H are mutually exclusive.
+
+*** Venn Diagrams
+- Useful for visualizing relationships among events.
+- Helpful for intuition and counterexamples.
+- Not considered rigorous proofs.
+
+*** Event Algebra Laws
+
+**** Basic Identities
+- (Eᶜ)ᶜ = E
+- E ∪ Eᶜ = S
+- ES = E
+- EEᶜ = ∅
+
+**** Commutative Laws
+- E ∪ F = F ∪ E
+- EF = FE
+
+**** Associative Laws
+- E ∪ (F ∪ G) = (E ∪ F) ∪ G
+- E(FG) = (EF)G
+
+**** Distributive Laws
+- (EF) ∪ H = (E ∪ H)(F ∪ H)
+- (E ∪ F)H = EH ∪ FH
+
+**** De Morgan's First Law
+- (E ∪ F)ᶜ = EᶜFᶜ
+
+**** De Morgan's Second Law
+- (EF)ᶜ = Eᶜ ∪ Fᶜ
+
+**** Useful Identity
+- E = EF ∪ EFᶜ
+
+*** Proof Technique: Elementwise Method
+To prove two events are equal:
+
+1. Show every point of the left side belongs to the right side.
+2. Show every point of the right side belongs to the left side.
+
+Then the two sets are equal.
+
+Example:
+- Proof of De Morgan's law:
+  - (E ∪ F)ᶜ = EᶜFᶜ
+
+*** Main Takeaways
+- Probability theory is built on sample spaces and events.
+- Events are simply sets of outcomes.
+- Set operations (union, intersection, complement, difference) describe relationships between events.
+- Venn diagrams aid intuition.
+- Event algebra identities and De Morgan's laws are fundamental tools used throughout probability.
+
+** Additional Concepts Introduced in Exercises of section 1.2
+
+*** Finite vs Infinite Sample Spaces
+- A sample space may contain:
+  - Finite outcomes (coin tosses, dice rolls).
+  - Countably infinite outcomes (flip until first heads).
+  - Uncountably infinite outcomes (choose a real number from an interval).
+
+Examples:
+- Flip until first heads:
+  S = {H, TH, TTH, TTTH, ...}
+- Choose a point from (-1,1):
+  S = {x : -1 < x < 1}
+
+*** Ordered Outcomes
+- Sometimes order matters.
+
+Examples:
+- Three coin tosses:
+  HHT ≠ HTH ≠ THH
+
+- Arranging books on a shelf:
+  Different orders correspond to different outcomes.
+
+*** Cartesian Product Sample Spaces
+- When an experiment consists of several measurements, outcomes are often represented as tuples.
+
+Examples:
+- Two dice:
+  S = {(i,j): 1 ≤ i,j ≤ 6}
+
+- Bus example:
+  S = {(passengers,time)}
+
+*** System Reliability Representation
+- Components of a system can be represented by events.
+
+Let:
+- Ai = component i works.
+
+Then:
+- System works = logical combination of Ai's.
+- System failure = complement of the working event.
+
+This idea appears repeatedly later in probability and engineering.
+
+*** Exactly One / Exactly Two / At Least One
+Common event constructions:
+
+- At least one:
+  A ∪ B ∪ C
+
+- None:
+  AᶜBᶜCᶜ
+
+- Exactly one:
+  ABᶜCᶜ ∪ AᶜBCᶜ ∪ AᶜBᶜC
+
+- Exactly two:
+  ABCᶜ ∪ ABᶜC ∪ AᶜBC
+
+These appear frequently in exercises.
+
+*** Partition of an Event
+Events can be decomposed into disjoint pieces.
+
+Example:
+- E = EF ∪ EFᶜ
+
+The two pieces:
+- EF
+- EFᶜ
+
+are mutually exclusive.
+
+This idea later leads to the Law of Total Probability.
+
+*** Infinite Unions and Intersections
+For a sequence of events E₁,E₂,...
+
+- ⋃∞ᵢ₌₁ Ei
+  means at least one Ei occurs.
+
+- ⋂∞ᵢ₌₁ Ei
+  means all Ei occur.
+
+Example:
+Ei = (-1/2ⁱ, 1/2ⁱ)
+
+Then:
+- ⋃∞ᵢ₌₁ Ei = (-1/2, 1/2)
+- ⋂∞ᵢ₌₁ Ei = {0}
+
+*** Event Sequences
+Many exercises define:
+
+A₁, A₂, A₃, ...
+
+and ask about:
+
+- infinitely many Ai occur
+- eventually an Ai occurs
+- all Ai occur
+
+This prepares for limit concepts in later chapters.
+
+*** Mutually Exclusive vs Complementary
+Mutually Exclusive:
+- A ∩ B = ∅
+
+Complementary:
+- A ∩ B = ∅
+- A ∪ B = S
+
+Every pair of complementary events is mutually exclusive,
+but not every mutually exclusive pair is complementary.
+
+*** Sample Space Design
+A major skill in probability is choosing a useful sample space.
+
+The same experiment may have different valid sample spaces.
+
+Example:
+Families with three children
+
+Detailed:
+- {BBB, BBG, BGB, GBB, BGG, GBG, GGB, GGG}
+
+Compressed:
+- {0 girls, 1 girl, 2 girls, 3 girls}
+
+Different representations may lead to different probabilities for sample points.
+
+*** Event Translation Skill
+One of the most important abilities in probability:
+
+English statement → Set expression
+
+Examples:
+
+- "At least one occurs"
+  → A ∪ B ∪ C
+
+- "None occurs"
+  → AᶜBᶜCᶜ
+
+- "A occurs but B does not"
+  → ABᶜ
+
+- "A or B but not both"
+  → ABᶜ ∪ AᶜB
+
+- "Exactly one occurs"
+  → ABᶜ ∪ AᶜB
+
+- "Both occur"
+  → AB
