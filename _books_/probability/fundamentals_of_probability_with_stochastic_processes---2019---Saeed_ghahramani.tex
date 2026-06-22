@@ -1,0 +1,1501 @@
+% Created 2026-06-22 Mon 13:07
+% Intended LaTeX compiler: xelatex
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Bazinevis}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Bazinevis},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.2 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Chapter 1: Axioms of Probability}
+\label{sec:org754a5a2}
+\subsection{Axiom of Choice (AC)}
+\label{sec:org8b6f3b7}
+\subsubsection{Informal Idea}
+\label{sec:org2b36185}
+The Axiom of Choice states that:
+
+\begin{quote}
+Given any collection of nonempty sets, it is possible to choose one element from each set, even if no explicit rule for making the choices is known.
+\end{quote}
+
+In simple terms:
+\begin{itemize}
+\item If you have finitely many sets, choosing one element from each is easy.
+\item If you have infinitely many sets, especially infinitely many arbitrary sets, the existence of a choice function is not obvious.
+\item The Axiom of Choice guarantees that such a function exists.
+\end{itemize}
+\subsubsection{Formal Statement}
+\label{sec:orgf49d436}
+Let
+
+\[
+\mathcal{F} = \{A_i : i \in I\}
+\]
+
+be a collection of nonempty sets. Then there exists a function
+
+\[
+f : I \to \bigcup_{i\in I} A_i
+\]
+
+such that
+
+\[
+f(i) \in A_i
+\]
+
+for every \(i \in I\). The function \(f\) is called a \textbf{choice function}.
+\subsubsection{Example: Finite Collection}
+\label{sec:orgc98abb5}
+Suppose
+
+\[
+A_1=\{1,2\}
+\]
+\[
+A_2=\{a,b,c\}
+\]
+\[
+A_3=\{x,y\}
+\]
+
+A choice function could be:
+
+\[
+f(1)=1,\quad
+f(2)=b,\quad
+f(3)=x
+\]
+
+Here we selected one element from each set. No axiom is really needed because there are only finitely many choices.
+\subsubsection{Example: Infinite Collection}
+\label{sec:org36b84bb}
+Consider the family
+
+\[
+A_n=\{n,n+1\}
+\]
+
+for every natural number \(n\). A choice function might be
+
+\[
+f(n)=n.
+\]
+
+Again, a clear rule exists. The interesting cases occur when no obvious rule exists.
+\subsubsection{Why Is It Controversial?}
+\label{sec:orge7f0a48}
+
+Imagine an infinite collection of nonempty sets where:
+
+\begin{itemize}
+\item The sets are arbitrary.
+\item No formula distinguishes one element from another.
+\item No explicit selection procedure is available.
+\end{itemize}
+
+The Axiom of Choice says:
+
+\begin{quote}
+A choice function still exists.
+\end{quote}
+
+Even if nobody can describe it.
+
+Many mathematicians initially found this surprising because it asserts existence without providing a construction.
+\subsubsection{Equivalent Statements}
+\label{sec:orgaf8d0de}
+
+The following famous results are equivalent to the Axiom of Choice.
+\begin{enumerate}
+\item Well-Ordering Theorem
+\label{sec:org3aa999d}
+
+Every set can be well-ordered.
+
+That means:
+
+Every set can be arranged so that every nonempty subset has a smallest element.
+
+Even the real numbers can be well-ordered, although no explicit well-ordering is known.
+\item Zorn's Lemma
+\label{sec:orga2bfb95}
+
+If every chain in a partially ordered set has an upper bound, then the set contains a maximal element.
+
+Zorn's Lemma is heavily used in algebra.
+
+Examples:
+
+\begin{itemize}
+\item Every vector space has a basis.
+\item Every ring has a maximal ideal.
+\end{itemize}
+\item Tychonoff's Theorem
+\label{sec:orgc44967e}
+
+The product of any collection of compact topological spaces is compact.
+
+This is one of the most important theorems in topology.
+\end{enumerate}
+\subsubsection{Consequences}
+\label{sec:org80d643b}
+
+Using the Axiom of Choice, mathematicians can prove:
+
+\begin{itemize}
+\item Every vector space has a basis.
+\item Every set can be well-ordered.
+\item Infinite products of nonempty sets are nonempty.
+\item Many existence theorems in algebra and analysis.
+\end{itemize}
+\subsubsection{The Vitali Set}
+\label{sec:org136ab4f}
+
+One of the most famous consequences is the existence of a Vitali set.
+
+A Vitali set is constructed by selecting exactly one representative from each equivalence class of the relation
+
+\[
+x \sim y
+\]
+
+if and only if
+
+\[
+x-y \in \mathbb{Q}.
+\]
+
+There are uncountably many equivalence classes.
+
+To choose one representative from each class, we need the Axiom of Choice.
+
+The resulting set is not Lebesgue measurable.
+
+Thus:
+
+\begin{itemize}
+\item Axiom of Choice
+-> Vitali set exists.
+\item Vitali set
+-> Non-measurable sets exist.
+\end{itemize}
+\subsubsection{Why Measure Theory Cares}
+\label{sec:org197e0c6}
+
+Without the Axiom of Choice:
+
+\begin{itemize}
+\item It is possible that every subset of the real numbers is measurable.
+\end{itemize}
+
+With the Axiom of Choice:
+
+\begin{itemize}
+\item Non-measurable sets exist.
+\item The Vitali set is the standard example.
+\end{itemize}
+
+This is why the Axiom of Choice appears frequently in advanced measure theory.
+\subsubsection{Intuition}
+\label{sec:org5105cbc}
+
+The Axiom of Choice does \textbf{not} tell us how to make the choices.
+
+It only says that a choice function exists.
+
+Think of having infinitely many boxes, each containing at least one object.
+
+The Axiom of Choice says:
+
+\begin{quote}
+You can pick one object from every box simultaneously,
+even if no rule tells you which object to pick.
+\end{quote}
+\subsubsection{Summary}
+\label{sec:org82e85bd}
+
+\begin{itemize}
+\item The Axiom of Choice asserts the existence of a choice function.
+\item It allows choosing one element from each set in an arbitrary collection of
+nonempty sets.
+\item It is equivalent to:
+\begin{itemize}
+\item Well-Ordering Theorem
+\item Zorn's Lemma
+\item Tychonoff's Theorem
+\end{itemize}
+\item It implies the existence of non-measurable sets such as the Vitali set.
+\item Many fundamental results in modern mathematics depend on it.
+\end{itemize}
+\subsection{Measure Theory}
+\label{sec:orgbfa3f46}
+\subsubsection{Motivation}
+\label{sec:org1e1d359}
+
+Measure theory is the mathematical study of:
+
+\begin{itemize}
+\item Length
+\item Area
+\item Volume
+\item Probability
+\end{itemize}
+
+and, more generally, the size of sets.
+
+Its goal is to answer questions such as:
+
+\begin{itemize}
+\item How long is a subset of the real line?
+\item How large is a subset of the plane?
+\item What is the probability of an event?
+\item Can every subset of the real numbers be assigned a size?
+\end{itemize}
+
+Measure theory provides a rigorous framework for answering these questions.
+\subsubsection{Historical Background}
+\label{sec:org9a4394a}
+
+Classical geometry measures simple objects:
+
+\begin{itemize}
+\item Intervals
+\item Rectangles
+\item Circles
+\item Cubes
+\end{itemize}
+
+However, mathematicians discovered sets that are much more complicated.
+
+Examples:
+
+\begin{itemize}
+\item Fractals
+\item Countable dense sets
+\item Non-measurable sets
+\end{itemize}
+
+A more general theory was needed.
+
+Measure theory was developed primarily by \textbf{Henri Lebesgue} (1875–1941), whose ideas generalized the notions of length, area, and integration and laid the foundation for modern analysis and probability theory.
+\subsubsection{Basic Idea}
+\label{sec:org2d76469}
+
+A measure assigns a nonnegative number to a set.
+
+Think of a measure as a generalized notion of size.
+
+For a set A:
+
+\[
+\mu(A)
+\]
+
+means
+
+\begin{quote}
+"The size of A."
+\end{quote}
+
+Depending on the context, size may mean:
+
+\begin{itemize}
+\item Length
+\item Area
+\item Volume
+\item Probability
+\item Mass
+\end{itemize}
+\subsubsection{Example: Length on the Real Line}
+\label{sec:orged313b9}
+
+Consider the interval
+
+\[
+[0,5].
+\]
+
+Its length is
+
+\[
+\mu([0,5]) = 5.
+\]
+
+Similarly,
+
+\[
+\mu([2,7]) = 5.
+\]
+
+Measure theory generalizes this notion to much more complicated sets.
+\subsubsection{Why We Need Sigma-Algebras}
+\label{sec:org2adc731}
+
+Not every collection of sets behaves nicely.
+
+We want a collection of sets that is closed under operations such as:
+
+\begin{itemize}
+\item Complements
+\item Countable unions
+\item Countable intersections
+\end{itemize}
+
+Such a collection is called a sigma-algebra.
+\subsubsection{Definition: Sigma-Algebra}
+\label{sec:org48d4519}
+
+Let X be a set.
+
+A collection
+
+\[
+\mathcal F
+\]
+
+of subsets of X is a sigma-algebra if:
+\begin{enumerate}
+\item Contains the whole space
+\label{sec:org0235403}
+
+\[
+X \in \mathcal F.
+\]
+\item Closed under complements
+\label{sec:orgf4ca345}
+
+If
+
+\[
+A \in \mathcal F
+\]
+
+then
+
+\[
+A^c \in \mathcal F.
+\]
+\item Closed under countable unions
+\label{sec:org154c357}
+
+If
+
+\[
+A_1,A_2,A_3,\ldots \in \mathcal F
+\]
+
+then
+
+\[
+\bigcup_{n=1}^{\infty} A_n
+\in \mathcal F.
+\]
+\end{enumerate}
+\subsubsection{Why Countable Operations?}
+\label{sec:orge11dc2f}
+
+Countable operations are sufficient for:
+
+\begin{itemize}
+\item Infinite sums
+\item Limits
+\item Convergence
+\item Probability theory
+\end{itemize}
+
+Allowing arbitrary unions creates technical problems.
+
+Measure theory therefore focuses on countable operations.
+\subsubsection{Measurable Space}
+\label{sec:orgd5e7814}
+
+A measurable space consists of:
+
+\[
+(X,\mathcal F).
+\]
+
+where
+
+\begin{itemize}
+\item X is the set of possible outcomes.
+\item \(\mathcal F\) is a sigma-algebra.
+\end{itemize}
+
+The sets in \(\mathcal F\) are called measurable sets.
+
+Only measurable sets are assigned measures.
+\subsubsection{Measure}
+\label{sec:org82f7442}
+
+A measure is a function
+
+\[
+\mu : \mathcal F \to [0,\infty].
+\]
+
+satisfying:
+\begin{enumerate}
+\item Nonnegativity
+\label{sec:orge84a250}
+
+\[
+\mu(A)\ge 0.
+\]
+\item Empty Set
+\label{sec:org9d7f7dc}
+
+\[
+\mu(\emptyset)=0.
+\]
+\item Countable Additivity
+\label{sec:orgbf37dd0}
+
+If
+
+\[
+A_1,A_2,A_3,\ldots
+\]
+
+are pairwise disjoint, then
+
+\[
+\mu\left(
+\bigcup_{n=1}^{\infty} A_n
+\right)
+=
+\sum_{n=1}^{\infty}
+\mu(A_n).
+\]
+
+This is the most important property.
+\end{enumerate}
+\subsubsection{Measure Space}
+\label{sec:org1d7055f}
+
+A measure space consists of:
+
+\[
+(X,\mathcal F,\mu).
+\]
+
+where:
+
+\begin{itemize}
+\item X is a set.
+\item \(\mathcal F\) is a sigma-algebra.
+\item \(\mu\) is a measure.
+\end{itemize}
+
+This is the fundamental object of measure theory.
+\subsubsection{Example: Counting Measure}
+\label{sec:orgad31b13}
+
+Let
+
+\[
+X=\mathbb N.
+\]
+
+Define
+
+\[
+\mu(A)
+=
+\text{number of elements of }A.
+\]
+
+Examples:
+
+\[
+\mu(\{1,5,8\})=3.
+\]
+
+\[
+\mu(\mathbb N)=\infty.
+\]
+
+This is called the counting measure.
+\subsubsection{Example: Probability Measure}
+\label{sec:org3e1f5ae}
+
+A probability measure satisfies
+
+\[
+P(X)=1.
+\]
+
+Probability theory is therefore a special case of measure theory.
+
+Correspondence:
+
+\begin{center}
+\begin{tabular}{ll}
+Measure Theory & Probability\\
+\hline
+X & Sample Space\\
+Measurable Set & Event\\
+Measure \(\mu\) & Probability P\\
+\(\mu(X)\) & 1\\
+\end{tabular}
+\end{center}
+\subsubsection{Lebesgue Measure}
+\label{sec:orge36493e}
+
+The most important measure on the real line is the Lebesgue measure.
+
+For ordinary intervals:
+
+\[
+m([a,b])=b-a.
+\]
+
+Examples:
+
+\[
+m([0,1])=1
+\]
+
+\[
+m([2,7])=5
+\]
+
+Lebesgue measure extends the notion of length to very complicated sets.
+\subsubsection{Null Sets}
+\label{sec:orgee51c95}
+
+A set with measure zero is called a null set.
+
+Examples:
+\begin{enumerate}
+\item A Single Point
+\label{sec:org910327a}
+
+\[
+m(\{5\})=0.
+\]
+\item Finite Sets
+\label{sec:orgdf20a4d}
+
+\[
+m(\{1,2,3\})=0.
+\]
+\item Countable Sets
+\label{sec:orge0d7468}
+
+\[
+m(\mathbb Q)=0.
+\]
+
+Even though the rational numbers are dense in the real line, their total
+Lebesgue measure is zero.
+\end{enumerate}
+\subsubsection{Why Rational Numbers Have Measure Zero}
+\label{sec:orge6d463a}
+
+Each rational number has length zero.
+
+Since the rationals are countable, we can cover them by intervals whose total
+length is arbitrarily small.
+
+Therefore
+
+\[
+m(\mathbb Q)=0.
+\]
+
+This is one of the first surprising results in measure theory.
+\subsubsection{Non-Measurable Sets}
+\label{sec:org6fc22ba}
+
+One might hope every subset of the real numbers has a measure.
+
+Unfortunately this is false.
+
+Using the Axiom of Choice, one can construct:
+
+\begin{itemize}
+\item Vitali sets
+\item Other non-measurable sets
+\end{itemize}
+
+These sets cannot consistently be assigned a Lebesgue measure.
+\subsubsection{Lebesgue Measurable Sets}
+\label{sec:org2d87f70}
+
+A set is Lebesgue measurable if it behaves well with respect to length.
+
+The collection of all Lebesgue measurable sets forms a sigma-algebra.
+
+This sigma-algebra contains:
+
+\begin{itemize}
+\item Open sets
+\item Closed sets
+\item Countable unions
+\item Countable intersections
+\item Borel sets
+\item Many more complicated sets
+\end{itemize}
+\subsubsection{Integration}
+\label{sec:org91528cb}
+
+Measure theory leads naturally to integration.
+
+Classical calculus uses the Riemann integral.
+
+Lebesgue developed a more powerful integral.
+
+Advantages:
+
+\begin{itemize}
+\item Handles more functions.
+\item Works better with limits.
+\item Dominates modern probability theory.
+\item Essential in functional analysis.
+\end{itemize}
+\subsubsection{Connection to Probability}
+\label{sec:org925b138}
+
+Probability theory can be viewed as measure theory where
+
+\[
+\mu(X)=1.
+\]
+
+A probability space is
+
+\[
+(\Omega,\mathcal F,P).
+\]
+
+where:
+
+\begin{itemize}
+\item \(\Omega\) is the sample space.
+\item \(\mathcal F\) is a sigma-algebra.
+\item P is a probability measure.
+\end{itemize}
+
+Thus probability is essentially measure theory with total mass equal to one.
+\subsubsection{Big Picture}
+\label{sec:orga73799d}
+
+Measure Theory asks:
+
+\begin{quote}
+How can we rigorously define the size of very complicated sets?
+\end{quote}
+
+To answer this, it introduces:
+
+\begin{itemize}
+\item Sigma-algebras
+\item Measures
+\item Measurable sets
+\item Lebesgue measure
+\item Integration
+\end{itemize}
+
+These ideas form the foundation of:
+
+\begin{itemize}
+\item Probability Theory
+\item Functional Analysis
+\item Ergodic Theory
+\item Stochastic Processes
+\item Modern Analysis
+\end{itemize}
+\subsubsection{Mental Map}
+\label{sec:org2759fac}
+
+Set X
+  ->
+Sigma Algebra \(\mathcal F\)
+  ->
+Measure \(\mu\)
+  ->
+Measure Space \((X,\mathcal F,\mu)\)
+  ->
+Lebesgue Measure
+  ->
+Lebesgue Integration
+  ->
+Probability Theory
+  ->
+Modern Analysis
+\subsubsection{Summary}
+\label{sec:org0ec55d8}
+
+\begin{itemize}
+\item Measure theory generalizes the idea of length, area, volume, and probability.
+\item A sigma-algebra specifies which sets can be measured.
+\item A measure assigns a size to measurable sets.
+\item A measure space is \((X,\mathcal F,\mu)\).
+\item Lebesgue measure generalizes ordinary length.
+\item Countable sets such as the rationals have measure zero.
+\item Some sets (e.g. Vitali sets) are not measurable.
+\item Probability theory is a special case of measure theory.
+\item Lebesgue integration is one of the central achievements of measure theory.
+\end{itemize}
+\subsection{Probability and Uncertainty}
+\label{sec:org7794707}
+
+\begin{itemize}
+\item Probability is used when the outcome of an experiment is uncertain.
+\item If we had complete information about all relevant factors, the outcome would be fully determined and probability would not be needed.
+\item In practice, we rarely possess complete knowledge of a system.
+\item Probability provides a mathematical framework for reasoning under uncertainty.
+\end{itemize}
+
+Examples:
+\begin{itemize}
+\item A coin toss follows physical laws, but we do not know the exact initial conditions.
+\item Weather systems are governed by physics, but complete information is unavailable.
+\item Therefore probability quantifies uncertainty arising from incomplete knowledge or practical unpredictability.
+\end{itemize}
+\subsection{1.1 Introduction}
+\label{sec:orgf558ab6}
+
+\subsubsection{Random, Certain, and Impossible Events}
+\label{sec:org2249ee1}
+
+\begin{itemize}
+\item \textbf{Random Event}: May or may not occur.
+\begin{itemize}
+\item Example: A radioactive atom may or may not decay during a given time interval.
+\item Example: An inspector may or may not find a defect in a product.
+\end{itemize}
+
+\item \textbf{Certain Event}: Guaranteed to occur.
+\begin{itemize}
+\item Example: Lightning is observed before thunder is heard.
+\end{itemize}
+
+\item \textbf{Impossible Event}: Can never occur.
+\begin{itemize}
+\item Example: An object traveling faster than the speed of light.
+\end{itemize}
+\end{itemize}
+\subsubsection{Why Probability Is Needed}
+\label{sec:org543cf23}
+
+Knowing that an event is random is not enough. We want to measure \textbf{how likely} it is to occur.
+
+Observation:
+\begin{itemize}
+\item When an experiment is repeated many times, the proportion of occurrences of an event often approaches a constant value.
+\item Probability is used to describe this long-run behavior.
+\end{itemize}
+
+Example:
+\begin{itemize}
+\item Repeatedly tossing a fair coin results in the proportion of heads approaching 1/2.
+\item Therefore:
+\end{itemize}
+
+\[
+P(\text{Heads})=\frac{1}{2}
+\]
+\subsubsection{Historical Background}
+\label{sec:org1388833}
+
+Probability originated from the study of games of chance and gambling.
+
+Important contributors:
+
+\begin{itemize}
+\item \href{../../_ocean_/people.org}{Luca Pacioli}
+\item \href{../../_ocean_/people.org}{Niccolò Tartaglia}
+\item \href{../../_ocean_/people.org}{Girolamo Cardano}
+\item \href{../../_ocean_/people.org}{Galileo Galilei}
+\end{itemize}
+
+Major milestone:
+
+\begin{itemize}
+\item \href{../../_ocean_/people.org}{Blaise Pascal}
+\item \href{../../_ocean_/people.org}{Pierre de Fermat}
+\item \href{../../_ocean_/people.org}{Christiaan Huygens}
+\end{itemize}
+
+Further development:
+
+\begin{itemize}
+\item \href{../../_ocean_/people.org}{Jacob Bernoulli}
+\item \href{../../_ocean_/people.org}{Abraham de Moivre}
+\item \href{../../_ocean_/people.org}{Pierre-Simon Laplace}
+\item \href{../../_ocean_/people.org}{Siméon Denis Poisson}
+\item \href{../../_ocean_/people.org}{Carl Friedrich Gauss}
+\item \href{../../_ocean_/people.org}{Pafnuty Chebyshev}
+\item \href{../../_ocean_/people.org}{Andrey Markov}
+\item \href{../../_ocean_/people.org}{Aleksandr Lyapunov}
+\end{itemize}
+\subsubsection{Interpretations of Probability}
+\label{sec:orgca72181}
+
+\begin{enumerate}
+\item Classical Interpretation
+\label{sec:org5e1de70}
+
+Probability is defined as
+
+\[
+P(A)=
+\frac{\text{number of favorable outcomes}}
+     {\text{number of equally likely outcomes}}
+\]
+
+\begin{itemize}
+\item Originated from gambling problems.
+\item Applicable when outcomes are equally likely.
+\end{itemize}
+
+Example:
+
+\[
+P(\{6\})=\frac{1}{6}
+\]
+
+for a fair die.
+\item Relative Frequency Interpretation
+\label{sec:orgcb8ba7d}
+
+Probability is the limiting relative frequency of occurrence in repeated trials.
+
+\[
+P(A)=
+\lim_{n\to\infty}
+\frac{n(A)}{n}
+\]
+
+where
+
+\begin{itemize}
+\item \(n\) = number of repetitions.
+\item \(n(A)\) = number of times event \(A\) occurs.
+\end{itemize}
+\item Subjective Interpretation
+\label{sec:org6ab1c8d}
+
+\begin{itemize}
+\item Probability represents a degree of belief based on available information.
+\item Different individuals may assign different probabilities if they possess different information.
+\end{itemize}
+
+Examples:
+
+\begin{itemize}
+\item Probability a startup succeeds.
+\item Probability a candidate wins an election.
+\item Probability a patient responds to a treatment.
+\end{itemize}
+\end{enumerate}
+\subsubsection{Relative Frequency Interpretation}
+\label{sec:orge4fea1b}
+
+\begin{quote}
+\[
+P(A)=
+\lim_{n\to\infty}
+\frac{n(A)}{n}
+\]
+\end{quote}
+\subsubsection{Problems with the Frequency Definition}
+\label{sec:org609c733}
+
+\begin{enumerate}
+\item Infinite experiments cannot be performed in practice.
+\item The limit may not exist.
+\item Subjective probabilities cannot be justified.
+\end{enumerate}
+\subsubsection{Hilbert's Challenge}
+\label{sec:orgee98e36}
+
+\href{../../_ocean_/people.org}{David Hilbert} proposed axiomatizing probability in 1900.
+\subsubsection{Kolmogorov's Axiomatic Approach (1933)}
+\label{sec:org8118f60}
+
+\href{../../_ocean_/people.org}{Andrey Kolmogorov} built the modern axiomatic foundation of probability.
+\subsubsection{Main Takeaway}
+\label{sec:org79107fc}
+
+Probability provides a rigorous framework for uncertainty using axioms.
+\subsubsection{1.2 Sample Space and Events}
+\label{sec:orga51b07c}
+
+\begin{enumerate}
+\item Sample Space
+\label{sec:orgbebddbd}
+
+\begin{itemize}
+\item The \textbf{sample space} (\(S\)) is the set of all possible outcomes of an experiment.
+\item Each outcome is called a \textbf{sample point}.
+\end{itemize}
+
+Examples:
+
+\[
+S=\{H,T\}
+\]
+
+\[
+S=\{x:x\ge0\}
+\]
+\item Events
+\label{sec:orgf98d4dd}
+
+\begin{itemize}
+\item An \textbf{event} is any \textbf{subset} of the sample space.
+\item An event occurs when the observed outcome \textbf{belongs} to that subset.
+\item Sample space is a set as well as event. If one member of a event set happens, we say that event happened. [hey ai add example here]
+\end{itemize}
+
+Examples:
+
+\begin{itemize}
+\item Coin toss: \(\{H\}\) = getting heads.
+\item Light bulb lifetime ≥ 100 hours.
+\item Bus arrives with 27 passengers between specific times.
+\end{itemize}
+\item Different Representations
+\label{sec:org7aab8ae}
+
+\begin{itemize}
+\item The same experiment can have different sample-space representations.
+\end{itemize}
+
+Example:
+
+\begin{itemize}
+\item Bus arrival time measured in hours.
+\item Bus arrival time measured in minutes after 11:00.
+\end{itemize}
+
+Different representations describe the same outcomes.
+\item Basic Event Operations
+\label{sec:org3c2b94e}
+
+\begin{enumerate}
+\item Subset
+\label{sec:orgf92569e}
+
+\[
+E\subseteq F
+\]
+
+Whenever \(E\) occurs, \(F\) also occurs.
+\item Equality
+\label{sec:orgcf012ac}
+
+\[
+E=F
+\]
+
+iff
+
+\[
+E\subseteq F
+\quad\text{and}\quad
+F\subseteq E
+\]
+\item Intersection
+\label{sec:orgd4f4270}
+
+\[
+E\cap F
+\]
+
+Occurs when both \(E\) and \(F\) occur.
+\item Union
+\label{sec:org89ed325}
+
+\[
+E\cup F
+\]
+
+Occurs when at least one of \(E\) or \(F\) occurs.
+\item Complement
+\label{sec:org446bb2f}
+
+\[
+E^c
+\]
+
+Occurs when \(E\) does not occur.
+\item Difference
+\label{sec:org7612965}
+
+\[
+E-F=E\cap F^c
+\]
+
+Occurs when \(E\) occurs but \(F\) does not.
+\item Certain Event
+\label{sec:org6ed6b7b}
+
+\begin{itemize}
+\item Event that always occurs.
+\item The sample space \(S\).
+\end{itemize}
+\item Impossible Event
+\label{sec:orgdcc9ca5}
+
+\[
+\varnothing
+\]
+\item Mutually Exclusive Events
+\label{sec:org0a10df3}
+
+\[
+E\cap F=\varnothing
+\]
+\end{enumerate}
+\item Operations on Collections of Events
+\label{sec:org45e0120}
+
+\begin{enumerate}
+\item Union of Many Events
+\label{sec:org836a6e1}
+
+\[
+\bigcup_i E_i
+\]
+
+At least one \(E_i\) occurs.
+\item Intersection of Many Events
+\label{sec:orgc070a8b}
+
+\[
+\bigcap_i E_i
+\]
+
+All \(E_i\) occur simultaneously.
+\end{enumerate}
+\item Example: Airport Queue
+\label{sec:org2ecfcfe}
+
+Let
+
+\begin{itemize}
+\item \(E\) = at least 5 planes waiting.
+\item \(F\) = at most 3 planes waiting.
+\item \(H\) = exactly 2 planes waiting.
+\end{itemize}
+
+Results:
+
+\begin{itemize}
+\item \(E^c\) = at most 4 planes waiting.
+\item \(F^c\) = at least 4 planes waiting.
+\item \(E\subseteq F^c\)
+\item \(H\subseteq F\)
+\item \(E\) and \(F\) are mutually exclusive.
+\item \(E\) and \(H\) are mutually exclusive.
+\end{itemize}
+\item Venn Diagrams
+\label{sec:org780a2ae}
+
+\begin{itemize}
+\item Useful for visualizing relationships among events.
+\item Helpful for intuition and counterexamples.
+\item Not considered rigorous proofs.
+\end{itemize}
+\item Event Algebra Laws
+\label{sec:org9fc10ae}
+
+\begin{enumerate}
+\item Basic Identities
+\label{sec:org828ea91}
+
+\[
+(E^c)^c=E
+\]
+
+\[
+E\cup E^c=S
+\]
+
+\[
+E\cap S=E
+\]
+
+\[
+E\cap E^c=\varnothing
+\]
+\item Commutative Laws
+\label{sec:org09c4d80}
+
+\[
+E\cup F=F\cup E
+\]
+
+\[
+E\cap F=F\cap E
+\]
+\item Associative Laws
+\label{sec:org267caae}
+
+\[
+E\cup(F\cup G)
+=
+(E\cup F)\cup G
+\]
+
+\[
+E\cap(F\cap G)
+=
+(E\cap F)\cap G
+\]
+\item Distributive Laws
+\label{sec:org2219c9a}
+
+\[
+(E\cap F)\cup H
+=
+(E\cup H)\cap(F\cup H)
+\]
+
+\[
+(E\cup F)\cap H
+=
+(E\cap H)\cup(F\cap H)
+\]
+\item De Morgan's First Law
+\label{sec:orgbb105d3}
+
+\[
+(E\cup F)^c
+=
+E^c\cap F^c
+\]
+\item De Morgan's Second Law
+\label{sec:orgfe88699}
+
+\[
+(E\cap F)^c
+=
+E^c\cup F^c
+\]
+\item Useful Identity
+\label{sec:org813bd48}
+
+\[
+E
+=
+(E\cap F)
+\cup
+(E\cap F^c)
+\]
+\end{enumerate}
+\item Proof Technique: Elementwise Method
+\label{sec:orgf321577}
+
+To prove two events are equal:
+
+\begin{enumerate}
+\item Show every point of the left side belongs to the right side.
+\item Show every point of the right side belongs to the left side.
+\end{enumerate}
+
+Then the two sets are equal.
+
+Example:
+
+\[
+(E\cup F)^c
+=
+E^c\cap F^c
+\]
+\item Main Takeaways
+\label{sec:org0a29767}
+
+\begin{itemize}
+\item Probability theory is built on sample spaces and events.
+\item Events are simply sets of outcomes.
+\item Set operations describe relationships between events.
+\item Venn diagrams aid intuition.
+\item Event algebra identities and De Morgan's laws are fundamental tools used throughout probability.
+\end{itemize}
+\end{enumerate}
+\subsubsection{Additional Concepts Introduced in Exercises of Section 1.2}
+\label{sec:org3addcf7}
+
+\begin{enumerate}
+\item Finite vs Infinite Sample Spaces
+\label{sec:org185f631}
+
+A sample space may contain
+
+\begin{itemize}
+\item Finite outcomes.
+\item Countably infinite outcomes.
+\item Uncountably infinite outcomes.
+\end{itemize}
+
+Examples:
+
+\[
+S=
+\{H,TH,TTH,TTTH,\ldots\}
+\]
+
+\[
+S=
+\{x:-1<x<1\}
+\]
+\item Ordered Outcomes
+\label{sec:org7774eb9}
+
+Sometimes order matters.
+
+Examples:
+
+\[
+HHT \neq HTH \neq THH
+\]
+
+\begin{itemize}
+\item Arranging books on a shelf.
+\end{itemize}
+\item Cartesian Product Sample Spaces
+\label{sec:orgf7e2eaf}
+
+Experiments with several measurements are often represented as tuples.
+
+Example:
+
+\[
+S=
+\{(i,j):1\le i,j\le 6\}
+\]
+\item System Reliability Representation
+\label{sec:org5c2e11e}
+
+Let
+
+\[
+A_i
+=
+\text{component }i\text{ works}
+\]
+
+Then
+
+\begin{itemize}
+\item System works = logical combination of \(A_i\)'s.
+\item System failure = complement of the working event.
+\end{itemize}
+\item Exactly One / Exactly Two / At Least One
+\label{sec:orgaabe675}
+
+At least one:
+
+\[
+A\cup B\cup C
+\]
+
+None:
+
+\[
+A^c\cap B^c\cap C^c
+\]
+
+Exactly one:
+
+\[
+(A\cap B^c\cap C^c)
+\cup
+(A^c\cap B\cap C^c)
+\cup
+(A^c\cap B^c\cap C)
+\]
+
+Exactly two:
+
+\[
+(A\cap B\cap C^c)
+\cup
+(A\cap B^c\cap C)
+\cup
+(A^c\cap B\cap C)
+\]
+\item Partition of an Event
+\label{sec:orgec0d26d}
+
+\[
+E
+=
+(E\cap F)
+\cup
+(E\cap F^c)
+\]
+
+where the two pieces are mutually exclusive.
+\item Infinite Unions and Intersections
+\label{sec:org8662690}
+
+For a sequence \(E_1,E_2,\ldots\),
+
+\[
+\bigcup_{i=1}^{\infty} E_i
+\]
+
+means at least one \(E_i\) occurs.
+
+\[
+\bigcap_{i=1}^{\infty} E_i
+\]
+
+means all \(E_i\) occur.
+
+Example:
+
+\[
+E_i
+=
+\left(
+-\frac{1}{2^i},
+\frac{1}{2^i}
+\right)
+\]
+
+Then
+
+\[
+\bigcup_{i=1}^{\infty} E_i
+=
+\left(
+-\frac12,
+\frac12
+\right)
+\]
+
+and
+
+\[
+\bigcap_{i=1}^{\infty} E_i
+=
+\{0\}
+\]
+\item Event Sequences
+\label{sec:orge878fc6}
+
+Many exercises define
+
+\[
+A_1,A_2,A_3,\ldots
+\]
+
+and ask about
+
+\begin{itemize}
+\item infinitely many \(A_i\) occur,
+\item eventually an \(A_i\) occurs,
+\item all \(A_i\) occur.
+\end{itemize}
+\item Mutually Exclusive vs Complementary
+\label{sec:org29192d6}
+
+Mutually Exclusive:
+
+\[
+A\cap B=\varnothing
+\]
+
+Complementary:
+
+\[
+A\cap B=\varnothing
+\]
+
+and
+
+\[
+A\cup B=S
+\]
+
+Every complementary pair is mutually exclusive, but not every mutually exclusive pair is complementary.
+\item Sample Space Design
+\label{sec:org829a5e3}
+
+A major skill in probability is choosing a useful sample space.
+
+Example:
+
+Detailed representation:
+
+\[
+\{BBB,BBG,BGB,GBB,BGG,GBG,GGB,GGG\}
+\]
+
+Compressed representation:
+
+\[
+\{0\text{ girls},1\text{ girl},2\text{ girls},3\text{ girls}\}
+\]
+
+Different representations may lead to different probabilities for sample points.
+\item Event Translation Skill
+\label{sec:orgfce92c5}
+
+English statement → Set expression
+
+At least one occurs:
+
+\[
+A\cup B\cup C
+\]
+
+None occurs:
+
+\[
+A^c\cap B^c\cap C^c
+\]
+
+\(A\) occurs but \(B\) does not:
+
+\[
+A\cap B^c
+\]
+
+\(A\) or \(B\) but not both:
+
+\[
+(A\cap B^c)
+\cup
+(A^c\cap B)
+\]
+
+Exactly one occurs:
+
+\[
+(A\cap B^c)
+\cup
+(A^c\cap B)
+\]
+
+Both occur:
+
+\[
+A\cap B
+\]
+\end{enumerate}
+\end{document}

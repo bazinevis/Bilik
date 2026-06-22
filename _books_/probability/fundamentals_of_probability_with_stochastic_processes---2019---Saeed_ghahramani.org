@@ -1,3 +1,5 @@
+#+LATEX_COMPILER: xelatex
+
 * Chapter 1: Axioms of Probability
 ** Axiom of Choice (AC)
 *** Informal Idea
@@ -238,9 +240,7 @@ Examples:
 
 A more general theory was needed.
 
-Measure theory was developed primarily by
-:contentReference[oaicite:0]{index=0}
-in the early twentieth century.
+Measure theory was developed primarily by *Henri Lebesgue* (1875–1941), whose ideas generalized the notions of length, area, and integration and laid the foundation for modern analysis and probability theory.
 
 *** Basic Idea
 
@@ -478,12 +478,12 @@ Probability theory is therefore a special case of measure theory.
 
 Correspondence:
 
-| Measure Theory | Probability |
-|---------------+-------------|
-| X             | Sample Space |
-| Measurable Set | Event |
+| Measure Theory  | Probability   |
+|-----------------+---------------|
+| X               | Sample Space  |
+| Measurable Set  | Event         |
 | Measure \(\mu\) | Probability P |
-| \(\mu(X)\) | 1 |
+| \(\mu(X)\)      | 1             |
 
 *** Lebesgue Measure
 
@@ -723,7 +723,7 @@ Important contributors:
 - [[id:1ab0fefd-de9a-4307-897b-79d25d77e2c9][Girolamo Cardano]]
 - [[id:868d2eff-0abe-47e5-b770-238e255ed053][Galileo Galilei]]
 
-Major milestone:
+Major milestone:
 
 - [[id:0f8b1b88-ea8c-47ea-bdf7-222d4d3bfb3b][Blaise Pascal]]
 - [[id:4fb110d7-50d7-4ba9-ba04-aca431cea25d][Pierre de Fermat]]
