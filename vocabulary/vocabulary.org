@@ -1,0 +1,47 @@
+* Controversial
+:PROPERTIES:
+:PART_OF_SPEECH: adjective
+:END:
+
+** Definition (English)
+
+A person, topic, decision, or opinion that causes disagreement, debate, or strong differences of opinion among people.
+
+** Persian Definition
+
+بحث‌برانگیز، جنجالی، مورد اختلاف؛ چیزی که باعث اختلاف نظر یا بحث میان افراد می‌شود.
+
+** Examples
+
+1. The politician made a controversial statement during the interview.
+
+- آن سیاستمدار در طول مصاحبه یک اظهارنظر جنجالی انجام داد.
+
+2. The new law is highly controversial.
+
+- قانون جدید بسیار بحث‌برانگیز است.
+
+3. The company faced criticism for its controversial decision.
+   - شرکت به دلیل تصمیم جنجالی خود با انتقاد روبه‌رو شد.
+
+4. Climate change policies can be controversial in some countries.
+   - سیاست‌های مربوط به تغییرات اقلیمی در برخی کشورها می‌توانند بحث‌برانگیز باشند.
+
+** Synonyms
+- debatable
+- disputed
+- contentious
+- contentious
+- divisive
+
+** Antonyms
+- uncontroversial
+- accepted
+- undisputed
+
+** Notes
+- "Controversial" does not necessarily mean "wrong" or "bad".
+- It simply means that many people disagree about it.
+- Example:
+  - "The theory is controversial." (People disagree about it.)
+  - It does NOT automatically mean the theory is false.

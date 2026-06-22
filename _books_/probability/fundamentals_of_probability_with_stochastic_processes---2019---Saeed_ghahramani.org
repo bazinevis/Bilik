@@ -1,6 +1,687 @@
 * Chapter 1: Axioms of Probability
+** Axiom of Choice (AC)
+*** Informal Idea
+The Axiom of Choice states that:
 
-** TODO IF WE KNOW EVERY INFORMATION TO CALCULATE AN EVENT WE DON'T NEED PROBABILITY. BECAUSE WE DON'T KNOW EVERY DETAILS ABOUT AN EVENT WE NEED PROBABILITY TO ESTIMATE IT. PROBABILITY IS A CALCULATION WHEN WE DON'T HAVE ENOUGH KNOWLEDGE.
+#+begin_quote
+Given any collection of nonempty sets, it is possible to choose one element from each set, even if no explicit rule for making the choices is known.
+#+end_quote
+
+In simple terms:
+- If you have finitely many sets, choosing one element from each is easy.
+- If you have infinitely many sets, especially infinitely many arbitrary sets, the existence of a choice function is not obvious.
+- The Axiom of Choice guarantees that such a function exists.
+
+*** Formal Statement
+Let
+
+\[
+\mathcal{F} = \{A_i : i \in I\}
+\]
+
+be a collection of nonempty sets. Then there exists a function
+
+\[
+f : I \to \bigcup_{i\in I} A_i
+\]
+
+such that
+
+\[
+f(i) \in A_i
+\]
+
+for every \(i \in I\). The function \(f\) is called a *choice function*.
+
+*** Example: Finite Collection
+Suppose
+
+\[
+A_1=\{1,2\}
+\]
+\[
+A_2=\{a,b,c\}
+\]
+\[
+A_3=\{x,y\}
+\]
+
+A choice function could be:
+
+\[
+f(1)=1,\quad
+f(2)=b,\quad
+f(3)=x
+\]
+
+Here we selected one element from each set. No axiom is really needed because there are only finitely many choices.
+
+*** Example: Infinite Collection
+Consider the family
+
+\[
+A_n=\{n,n+1\}
+\]
+
+for every natural number \(n\). A choice function might be
+
+\[
+f(n)=n.
+\]
+
+Again, a clear rule exists. The interesting cases occur when no obvious rule exists.
+
+*** Why Is It Controversial?
+
+Imagine an infinite collection of nonempty sets where:
+
+- The sets are arbitrary.
+- No formula distinguishes one element from another.
+- No explicit selection procedure is available.
+
+The Axiom of Choice says:
+
+#+begin_quote
+A choice function still exists.
+#+end_quote
+
+Even if nobody can describe it.
+
+Many mathematicians initially found this surprising because it asserts existence without providing a construction.
+
+*** Equivalent Statements
+
+The following famous results are equivalent to the Axiom of Choice.
+
+**** Well-Ordering Theorem
+
+Every set can be well-ordered.
+
+That means:
+
+Every set can be arranged so that every nonempty subset has a smallest element.
+
+Even the real numbers can be well-ordered, although no explicit well-ordering is known.
+
+**** Zorn's Lemma
+
+If every chain in a partially ordered set has an upper bound, then the set contains a maximal element.
+
+Zorn's Lemma is heavily used in algebra.
+
+Examples:
+
+- Every vector space has a basis.
+- Every ring has a maximal ideal.
+
+**** Tychonoff's Theorem
+
+The product of any collection of compact topological spaces is compact.
+
+This is one of the most important theorems in topology.
+
+*** Consequences
+
+Using the Axiom of Choice, mathematicians can prove:
+
+- Every vector space has a basis.
+- Every set can be well-ordered.
+- Infinite products of nonempty sets are nonempty.
+- Many existence theorems in algebra and analysis.
+
+*** The Vitali Set
+
+One of the most famous consequences is the existence of a Vitali set.
+
+A Vitali set is constructed by selecting exactly one representative from each equivalence class of the relation
+
+\[
+x \sim y
+\]
+
+if and only if
+
+\[
+x-y \in \mathbb{Q}.
+\]
+
+There are uncountably many equivalence classes.
+
+To choose one representative from each class, we need the Axiom of Choice.
+
+The resulting set is not Lebesgue measurable.
+
+Thus:
+
+- Axiom of Choice
+  -> Vitali set exists.
+- Vitali set
+  -> Non-measurable sets exist.
+
+*** Why Measure Theory Cares
+
+Without the Axiom of Choice:
+
+- It is possible that every subset of the real numbers is measurable.
+
+With the Axiom of Choice:
+
+- Non-measurable sets exist.
+- The Vitali set is the standard example.
+
+This is why the Axiom of Choice appears frequently in advanced measure theory.
+
+*** Intuition
+
+The Axiom of Choice does *not* tell us how to make the choices.
+
+It only says that a choice function exists.
+
+Think of having infinitely many boxes, each containing at least one object.
+
+The Axiom of Choice says:
+
+#+begin_quote
+You can pick one object from every box simultaneously,
+even if no rule tells you which object to pick.
+#+end_quote
+
+*** Summary
+
+- The Axiom of Choice asserts the existence of a choice function.
+- It allows choosing one element from each set in an arbitrary collection of
+  nonempty sets.
+- It is equivalent to:
+  - Well-Ordering Theorem
+  - Zorn's Lemma
+  - Tychonoff's Theorem
+- It implies the existence of non-measurable sets such as the Vitali set.
+- Many fundamental results in modern mathematics depend on it.
+
+** Measure Theory
+*** Motivation
+
+Measure theory is the mathematical study of:
+
+- Length
+- Area
+- Volume
+- Probability
+
+and, more generally, the size of sets.
+
+Its goal is to answer questions such as:
+
+- How long is a subset of the real line?
+- How large is a subset of the plane?
+- What is the probability of an event?
+- Can every subset of the real numbers be assigned a size?
+
+Measure theory provides a rigorous framework for answering these questions.
+
+*** Historical Background
+
+Classical geometry measures simple objects:
+
+- Intervals
+- Rectangles
+- Circles
+- Cubes
+
+However, mathematicians discovered sets that are much more complicated.
+
+Examples:
+
+- Fractals
+- Countable dense sets
+- Non-measurable sets
+
+A more general theory was needed.
+
+Measure theory was developed primarily by
+:contentReference[oaicite:0]{index=0}
+in the early twentieth century.
+
+*** Basic Idea
+
+A measure assigns a nonnegative number to a set.
+
+Think of a measure as a generalized notion of size.
+
+For a set A:
+
+\[
+\mu(A)
+\]
+
+means
+
+#+begin_quote
+"The size of A."
+#+end_quote
+
+Depending on the context, size may mean:
+
+- Length
+- Area
+- Volume
+- Probability
+- Mass
+
+*** Example: Length on the Real Line
+
+Consider the interval
+
+\[
+[0,5].
+\]
+
+Its length is
+
+\[
+\mu([0,5]) = 5.
+\]
+
+Similarly,
+
+\[
+\mu([2,7]) = 5.
+\]
+
+Measure theory generalizes this notion to much more complicated sets.
+
+*** Why We Need Sigma-Algebras
+
+Not every collection of sets behaves nicely.
+
+We want a collection of sets that is closed under operations such as:
+
+- Complements
+- Countable unions
+- Countable intersections
+
+Such a collection is called a sigma-algebra.
+
+*** Definition: Sigma-Algebra
+
+Let X be a set.
+
+A collection
+
+\[
+\mathcal F
+\]
+
+of subsets of X is a sigma-algebra if:
+
+**** Contains the whole space
+
+\[
+X \in \mathcal F.
+\]
+
+**** Closed under complements
+
+If
+
+\[
+A \in \mathcal F
+\]
+
+then
+
+\[
+A^c \in \mathcal F.
+\]
+
+**** Closed under countable unions
+
+If
+
+\[
+A_1,A_2,A_3,\ldots \in \mathcal F
+\]
+
+then
+
+\[
+\bigcup_{n=1}^{\infty} A_n
+\in \mathcal F.
+\]
+
+*** Why Countable Operations?
+
+Countable operations are sufficient for:
+
+- Infinite sums
+- Limits
+- Convergence
+- Probability theory
+
+Allowing arbitrary unions creates technical problems.
+
+Measure theory therefore focuses on countable operations.
+
+*** Measurable Space
+
+A measurable space consists of:
+
+\[
+(X,\mathcal F).
+\]
+
+where
+
+- X is the set of possible outcomes.
+- \(\mathcal F\) is a sigma-algebra.
+
+The sets in \(\mathcal F\) are called measurable sets.
+
+Only measurable sets are assigned measures.
+
+*** Measure
+
+A measure is a function
+
+\[
+\mu : \mathcal F \to [0,\infty].
+\]
+
+satisfying:
+
+**** Nonnegativity
+
+\[
+\mu(A)\ge 0.
+\]
+
+**** Empty Set
+
+\[
+\mu(\emptyset)=0.
+\]
+
+**** Countable Additivity
+
+If
+
+\[
+A_1,A_2,A_3,\ldots
+\]
+
+are pairwise disjoint, then
+
+\[
+\mu\left(
+\bigcup_{n=1}^{\infty} A_n
+\right)
+=
+\sum_{n=1}^{\infty}
+\mu(A_n).
+\]
+
+This is the most important property.
+
+*** Measure Space
+
+A measure space consists of:
+
+\[
+(X,\mathcal F,\mu).
+\]
+
+where:
+
+- X is a set.
+- \(\mathcal F\) is a sigma-algebra.
+- \(\mu\) is a measure.
+
+This is the fundamental object of measure theory.
+
+*** Example: Counting Measure
+
+Let
+
+\[
+X=\mathbb N.
+\]
+
+Define
+
+\[
+\mu(A)
+=
+\text{number of elements of }A.
+\]
+
+Examples:
+
+\[
+\mu(\{1,5,8\})=3.
+\]
+
+\[
+\mu(\mathbb N)=\infty.
+\]
+
+This is called the counting measure.
+
+*** Example: Probability Measure
+
+A probability measure satisfies
+
+\[
+P(X)=1.
+\]
+
+Probability theory is therefore a special case of measure theory.
+
+Correspondence:
+
+| Measure Theory | Probability |
+|---------------+-------------|
+| X             | Sample Space |
+| Measurable Set | Event |
+| Measure \(\mu\) | Probability P |
+| \(\mu(X)\) | 1 |
+
+*** Lebesgue Measure
+
+The most important measure on the real line is the Lebesgue measure.
+
+For ordinary intervals:
+
+\[
+m([a,b])=b-a.
+\]
+
+Examples:
+
+\[
+m([0,1])=1
+\]
+
+\[
+m([2,7])=5
+\]
+
+Lebesgue measure extends the notion of length to very complicated sets.
+
+*** Null Sets
+
+A set with measure zero is called a null set.
+
+Examples:
+
+**** A Single Point
+
+\[
+m(\{5\})=0.
+\]
+
+**** Finite Sets
+
+\[
+m(\{1,2,3\})=0.
+\]
+
+**** Countable Sets
+
+\[
+m(\mathbb Q)=0.
+\]
+
+Even though the rational numbers are dense in the real line, their total
+Lebesgue measure is zero.
+
+*** Why Rational Numbers Have Measure Zero
+
+Each rational number has length zero.
+
+Since the rationals are countable, we can cover them by intervals whose total
+length is arbitrarily small.
+
+Therefore
+
+\[
+m(\mathbb Q)=0.
+\]
+
+This is one of the first surprising results in measure theory.
+
+*** Non-Measurable Sets
+
+One might hope every subset of the real numbers has a measure.
+
+Unfortunately this is false.
+
+Using the Axiom of Choice, one can construct:
+
+- Vitali sets
+- Other non-measurable sets
+
+These sets cannot consistently be assigned a Lebesgue measure.
+
+*** Lebesgue Measurable Sets
+
+A set is Lebesgue measurable if it behaves well with respect to length.
+
+The collection of all Lebesgue measurable sets forms a sigma-algebra.
+
+This sigma-algebra contains:
+
+- Open sets
+- Closed sets
+- Countable unions
+- Countable intersections
+- Borel sets
+- Many more complicated sets
+
+*** Integration
+
+Measure theory leads naturally to integration.
+
+Classical calculus uses the Riemann integral.
+
+Lebesgue developed a more powerful integral.
+
+Advantages:
+
+- Handles more functions.
+- Works better with limits.
+- Dominates modern probability theory.
+- Essential in functional analysis.
+
+*** Connection to Probability
+
+Probability theory can be viewed as measure theory where
+
+\[
+\mu(X)=1.
+\]
+
+A probability space is
+
+\[
+(\Omega,\mathcal F,P).
+\]
+
+where:
+
+- \(\Omega\) is the sample space.
+- \(\mathcal F\) is a sigma-algebra.
+- P is a probability measure.
+
+Thus probability is essentially measure theory with total mass equal to one.
+
+*** Big Picture
+
+Measure Theory asks:
+
+#+begin_quote
+How can we rigorously define the size of very complicated sets?
+#+end_quote
+
+To answer this, it introduces:
+
+- Sigma-algebras
+- Measures
+- Measurable sets
+- Lebesgue measure
+- Integration
+
+These ideas form the foundation of:
+
+- Probability Theory
+- Functional Analysis
+- Ergodic Theory
+- Stochastic Processes
+- Modern Analysis
+
+*** Mental Map
+
+Set X
+  ->
+Sigma Algebra \(\mathcal F\)
+  ->
+Measure \(\mu\)
+  ->
+Measure Space \((X,\mathcal F,\mu)\)
+  ->
+Lebesgue Measure
+  ->
+Lebesgue Integration
+  ->
+Probability Theory
+  ->
+Modern Analysis
+
+*** Summary
+
+- Measure theory generalizes the idea of length, area, volume, and probability.
+- A sigma-algebra specifies which sets can be measured.
+- A measure assigns a size to measurable sets.
+- A measure space is \((X,\mathcal F,\mu)\).
+- Lebesgue measure generalizes ordinary length.
+- Countable sets such as the rationals have measure zero.
+- Some sets (e.g. Vitali sets) are not measurable.
+- Probability theory is a special case of measure theory.
+- Lebesgue integration is one of the central achievements of measure theory.
+
+
+
+** Probability and Uncertainty
+
+- Probability is used when the outcome of an experiment is uncertain.
+- If we had complete information about all relevant factors, the outcome would be fully determined and probability would not be needed.
+- In practice, we rarely possess complete knowledge of a system.
+- Probability provides a mathematical framework for reasoning under uncertainty.
+
+Examples:
+- A coin toss follows physical laws, but we do not know the exact initial conditions.
+- Weather systems are governed by physics, but complete information is unavailable.
+- Therefore probability quantifies uncertainty arising from incomplete knowledge or practical unpredictability.
+
 ** 1.1 Introduction
 
 *** Random, Certain, and Impossible Events
@@ -25,7 +706,11 @@ Observation:
 
 Example:
 - Repeatedly tossing a fair coin results in the proportion of heads approaching 1/2.
-- Therefore, P(Heads) = 1/2.
+- Therefore:
+
+\[
+P(\text{Heads})=\frac{1}{2}
+\]
 
 *** Historical Background
 
@@ -38,169 +723,340 @@ Important contributors:
 - [[id:1ab0fefd-de9a-4307-897b-79d25d77e2c9][Girolamo Cardano]]
 - [[id:868d2eff-0abe-47e5-b770-238e255ed053][Galileo Galilei]]
 
-Major milestone:
+Major milestone:
+
 - [[id:0f8b1b88-ea8c-47ea-bdf7-222d4d3bfb3b][Blaise Pascal]]
 - [[id:4fb110d7-50d7-4ba9-ba04-aca431cea25d][Pierre de Fermat]]
 - [[id:8d452eaa-d909-4c35-a46a-d203bf85a884][Christiaan Huygens]]
 
 Further development:
-+ [[id:ee53a30c-865f-40d6-8be8-82b5a2d00a65][Jacob Bernoulli]]
-+ [[id:474a1bae-4db3-4d8c-aadc-4d6784b9fbd6][Abraham de Moivre]]
-+ [[id:5f652070-86c2-4b84-b642-96d5c9e5f98d][Pierre-Simon Laplace]]
-+ [[id:016f1235-97e4-434d-aa23-e251bb58b017][Siméon Denis Poisson]]
-+ [[id:a5cfd4bd-e681-478f-b0c3-35de9404d77d][Carl Friedrich Gauss]]
-+ [[id:1a44bef3-83f5-42f5-82cf-f8d69db25027][Pafnuty Chebyshev]]
-+ [[id:14801278-45c9-41ff-af30-7d9bf8dd9119][Andrey Markov]]
-+ [[id:78c517d0-9ea7-4115-b4a9-d7c1c8f652d4][Aleksandr Lyapunov]]
 
-* TODO THERE ARE THREE? INTERPRETATION OF PROBABILITY. NAME THEM
+- [[id:ee53a30c-865f-40d6-8be8-82b5a2d00a65][Jacob Bernoulli]]
+- [[id:474a1bae-4db3-4d8c-aadc-4d6784b9fbd6][Abraham de Moivre]]
+- [[id:5f652070-86c2-4b84-b642-96d5c9e5f98d][Pierre-Simon Laplace]]
+- [[id:016f1235-97e4-434d-aa23-e251bb58b017][Siméon Denis Poisson]]
+- [[id:a5cfd4bd-e681-478f-b0c3-35de9404d77d][Carl Friedrich Gauss]]
+- [[id:1a44bef3-83f5-42f5-82cf-f8d69db25027][Pafnuty Chebyshev]]
+- [[id:14801278-45c9-41ff-af30-7d9bf8dd9119][Andrey Markov]]
+- [[id:78c517d0-9ea7-4115-b4a9-d7c1c8f652d4][Aleksandr Lyapunov]]
+
+*** Interpretations of Probability
+
+**** Classical Interpretation
+
+Probability is defined as
+
+\[
+P(A)=
+\frac{\text{number of favorable outcomes}}
+     {\text{number of equally likely outcomes}}
+\]
+
+- Originated from gambling problems.
+- Applicable when outcomes are equally likely.
+
+Example:
+
+\[
+P(\{6\})=\frac{1}{6}
+\]
+
+for a fair die.
+
+**** Relative Frequency Interpretation
+
+Probability is the limiting relative frequency of occurrence in repeated trials.
+
+\[
+P(A)=
+\lim_{n\to\infty}
+\frac{n(A)}{n}
+\]
+
+where
+
+- \(n\) = number of repetitions.
+- \(n(A)\) = number of times event \(A\) occurs.
+
+**** Subjective Interpretation
+
+- Probability represents a degree of belief based on available information.
+- Different individuals may assign different probabilities if they possess different information.
+
+Examples:
+
+- Probability a startup succeeds.
+- Probability a candidate wins an election.
+- Probability a patient responds to a treatment.
 
 *** Relative Frequency Interpretation
 
 #+begin_quote
-p = lim_{n→∞} n(A)/n
+\[
+P(A)=
+\lim_{n\to\infty}
+\frac{n(A)}{n}
+\]
 #+end_quote
 
 *** Problems with the Frequency Definition
+
 1. Infinite experiments cannot be performed in practice.
 2. The limit may not exist.
 3. Subjective probabilities cannot be justified.
 
 *** Hilbert's Challenge
+
 [[id:fbc9a8bd-b0c4-4f91-8807-5dbba9aeef9d][David Hilbert]] proposed axiomatizing probability in 1900.
 
 *** Kolmogorov's Axiomatic Approach (1933)
+
 [[id:529775ce-f3c0-49da-8fe4-245f0d6efef4][Andrey Kolmogorov]] built the modern axiomatic foundation of probability.
 
 *** Main Takeaway
+
 Probability provides a rigorous framework for uncertainty using axioms.
 
-** 1.2 Sample Space and Events
+*** 1.2 Sample Space and Events
 
-*** Sample Space
-- The *sample space* (S) is the set of all possible outcomes of an experiment.
+**** Sample Space
+
+- The *sample space* (\(S\)) is the set of all possible outcomes of an experiment.
 - Each outcome is called a *sample point*.
 
 Examples:
-- Coin toss: S = {H, T}
-- Lifetime of a light bulb: S = {x : x ≥ 0}
-- Family genders, bus arrival times, round-off errors, etc.
 
-*** Events
-- An *event* is any subset of the sample space.
-- An event occurs when the observed outcome belongs to that subset.
+\[
+S=\{H,T\}
+\]
+
+\[
+S=\{x:x\ge0\}
+\]
+
+**** Events
+
+- An *event* is any *subset* of the sample space.
+- An event occurs when the observed outcome *belongs* to that subset.
+- Sample space is a set as well as event. If one member of a event set happens, we say that event happened. [hey ai add example here]
 
 Examples:
-- Coin toss: {H} = getting heads.
+
+- Coin toss: \(\{H\}\) = getting heads.
 - Light bulb lifetime ≥ 100 hours.
 - Bus arrives with 27 passengers between specific times.
 
-*** Different Representations
+**** Different Representations
+
 - The same experiment can have different sample-space representations.
-- Example:
-  - Bus arrival time measured in hours.
-  - Bus arrival time measured in minutes after 11:00.
-- Different representations describe the same outcomes.
 
-*** Basic Event Operations
+Example:
 
-**** Subset
-- E ⊆ F means:
-  - Whenever E occurs, F also occurs.
+- Bus arrival time measured in hours.
+- Bus arrival time measured in minutes after 11:00.
 
-**** Equality
-- E = F if:
-  - E ⊆ F and F ⊆ E.
+Different representations describe the same outcomes.
 
-**** Intersection
-- E ∩ F (or EF)
-- Occurs when both E and F occur.
+**** Basic Event Operations
 
-**** Union
-- E ∪ F
-- Occurs when at least one of E or F occurs.
+***** Subset
 
-**** Complement
-- Eᶜ
-- Occurs when E does not occur.
+\[
+E\subseteq F
+\]
 
-**** Difference
-- E − F
-- Occurs when E occurs but F does not.
-- E − F = EFᶜ
+Whenever \(E\) occurs, \(F\) also occurs.
 
-**** Certain Event
+***** Equality
+
+\[
+E=F
+\]
+
+iff
+
+\[
+E\subseteq F
+\quad\text{and}\quad
+F\subseteq E
+\]
+
+***** Intersection
+
+\[
+E\cap F
+\]
+
+Occurs when both \(E\) and \(F\) occur.
+
+***** Union
+
+\[
+E\cup F
+\]
+
+Occurs when at least one of \(E\) or \(F\) occurs.
+
+***** Complement
+
+\[
+E^c
+\]
+
+Occurs when \(E\) does not occur.
+
+***** Difference
+
+\[
+E-F=E\cap F^c
+\]
+
+Occurs when \(E\) occurs but \(F\) does not.
+
+***** Certain Event
+
 - Event that always occurs.
-- The sample space S itself.
+- The sample space \(S\).
 
-**** Impossible Event
-- Event that can never occur.
-- The empty set ∅.
+***** Impossible Event
 
-**** Mutually Exclusive Events
-- Events that cannot occur together.
-- E and F are mutually exclusive if:
-  - E ∩ F = ∅
+\[
+\varnothing
+\]
 
-*** Operations on Collections of Events
+***** Mutually Exclusive Events
 
-**** Union of Many Events
-- ⋃ Ei
-- At least one Ei occurs.
+\[
+E\cap F=\varnothing
+\]
 
-**** Intersection of Many Events
-- ⋂ Ei
-- All Ei occur simultaneously.
+**** Operations on Collections of Events
 
-*** Example: Airport Queue
-Let:
-- E = at least 5 planes waiting.
-- F = at most 3 planes waiting.
-- H = exactly 2 planes waiting.
+***** Union of Many Events
+
+\[
+\bigcup_i E_i
+\]
+
+At least one \(E_i\) occurs.
+
+***** Intersection of Many Events
+
+\[
+\bigcap_i E_i
+\]
+
+All \(E_i\) occur simultaneously.
+
+**** Example: Airport Queue
+
+Let
+
+- \(E\) = at least 5 planes waiting.
+- \(F\) = at most 3 planes waiting.
+- \(H\) = exactly 2 planes waiting.
 
 Results:
-- Eᶜ = at most 4 planes waiting.
-- Fᶜ = at least 4 planes waiting.
-- E ⊆ Fᶜ
-- H ⊆ F
-- E and F are mutually exclusive.
-- E and H are mutually exclusive.
 
-*** Venn Diagrams
+- \(E^c\) = at most 4 planes waiting.
+- \(F^c\) = at least 4 planes waiting.
+- \(E\subseteq F^c\)
+- \(H\subseteq F\)
+- \(E\) and \(F\) are mutually exclusive.
+- \(E\) and \(H\) are mutually exclusive.
+
+**** Venn Diagrams
+
 - Useful for visualizing relationships among events.
 - Helpful for intuition and counterexamples.
 - Not considered rigorous proofs.
 
-*** Event Algebra Laws
+**** Event Algebra Laws
 
-**** Basic Identities
-- (Eᶜ)ᶜ = E
-- E ∪ Eᶜ = S
-- ES = E
-- EEᶜ = ∅
+***** Basic Identities
 
-**** Commutative Laws
-- E ∪ F = F ∪ E
-- EF = FE
+\[
+(E^c)^c=E
+\]
 
-**** Associative Laws
-- E ∪ (F ∪ G) = (E ∪ F) ∪ G
-- E(FG) = (EF)G
+\[
+E\cup E^c=S
+\]
 
-**** Distributive Laws
-- (EF) ∪ H = (E ∪ H)(F ∪ H)
-- (E ∪ F)H = EH ∪ FH
+\[
+E\cap S=E
+\]
 
-**** De Morgan's First Law
-- (E ∪ F)ᶜ = EᶜFᶜ
+\[
+E\cap E^c=\varnothing
+\]
 
-**** De Morgan's Second Law
-- (EF)ᶜ = Eᶜ ∪ Fᶜ
+***** Commutative Laws
 
-**** Useful Identity
-- E = EF ∪ EFᶜ
+\[
+E\cup F=F\cup E
+\]
 
-*** Proof Technique: Elementwise Method
+\[
+E\cap F=F\cap E
+\]
+
+***** Associative Laws
+
+\[
+E\cup(F\cup G)
+=
+(E\cup F)\cup G
+\]
+
+\[
+E\cap(F\cap G)
+=
+(E\cap F)\cap G
+\]
+
+***** Distributive Laws
+
+\[
+(E\cap F)\cup H
+=
+(E\cup H)\cap(F\cup H)
+\]
+
+\[
+(E\cup F)\cap H
+=
+(E\cap H)\cup(F\cap H)
+\]
+
+***** De Morgan's First Law
+
+\[
+(E\cup F)^c
+=
+E^c\cap F^c
+\]
+
+***** De Morgan's Second Law
+
+\[
+(E\cap F)^c
+=
+E^c\cup F^c
+\]
+
+***** Useful Identity
+
+\[
+E
+=
+(E\cap F)
+\cup
+(E\cap F^c)
+\]
+
+**** Proof Technique: Elementwise Method
+
 To prove two events are equal:
 
 1. Show every point of the left side belongs to the right side.
@@ -209,170 +1065,269 @@ To prove two events are equal:
 Then the two sets are equal.
 
 Example:
-- Proof of De Morgan's law:
-  - (E ∪ F)ᶜ = EᶜFᶜ
 
-*** Main Takeaways
+\[
+(E\cup F)^c
+=
+E^c\cap F^c
+\]
+
+**** Main Takeaways
+
 - Probability theory is built on sample spaces and events.
 - Events are simply sets of outcomes.
-- Set operations (union, intersection, complement, difference) describe relationships between events.
+- Set operations describe relationships between events.
 - Venn diagrams aid intuition.
 - Event algebra identities and De Morgan's laws are fundamental tools used throughout probability.
 
-** Additional Concepts Introduced in Exercises of section 1.2
+*** Additional Concepts Introduced in Exercises of Section 1.2
 
-*** Finite vs Infinite Sample Spaces
-- A sample space may contain:
-  - Finite outcomes (coin tosses, dice rolls).
-  - Countably infinite outcomes (flip until first heads).
-  - Uncountably infinite outcomes (choose a real number from an interval).
+**** Finite vs Infinite Sample Spaces
 
-Examples:
-- Flip until first heads:
-  S = {H, TH, TTH, TTTH, ...}
-- Choose a point from (-1,1):
-  S = {x : -1 < x < 1}
+A sample space may contain
 
-*** Ordered Outcomes
-- Sometimes order matters.
+- Finite outcomes.
+- Countably infinite outcomes.
+- Uncountably infinite outcomes.
 
 Examples:
-- Three coin tosses:
-  HHT ≠ HTH ≠ THH
 
-- Arranging books on a shelf:
-  Different orders correspond to different outcomes.
+\[
+S=
+\{H,TH,TTH,TTTH,\ldots\}
+\]
 
-*** Cartesian Product Sample Spaces
-- When an experiment consists of several measurements, outcomes are often represented as tuples.
+\[
+S=
+\{x:-1<x<1\}
+\]
+
+**** Ordered Outcomes
+
+Sometimes order matters.
 
 Examples:
-- Two dice:
-  S = {(i,j): 1 ≤ i,j ≤ 6}
 
-- Bus example:
-  S = {(passengers,time)}
+\[
+HHT \neq HTH \neq THH
+\]
 
-*** System Reliability Representation
-- Components of a system can be represented by events.
+- Arranging books on a shelf.
 
-Let:
-- Ai = component i works.
+**** Cartesian Product Sample Spaces
 
-Then:
-- System works = logical combination of Ai's.
+Experiments with several measurements are often represented as tuples.
+
+Example:
+
+\[
+S=
+\{(i,j):1\le i,j\le 6\}
+\]
+
+**** System Reliability Representation
+
+Let
+
+\[
+A_i
+=
+\text{component }i\text{ works}
+\]
+
+Then
+
+- System works = logical combination of \(A_i\)'s.
 - System failure = complement of the working event.
 
-This idea appears repeatedly later in probability and engineering.
+**** Exactly One / Exactly Two / At Least One
 
-*** Exactly One / Exactly Two / At Least One
-Common event constructions:
+At least one:
 
-- At least one:
-  A ∪ B ∪ C
+\[
+A\cup B\cup C
+\]
 
-- None:
-  AᶜBᶜCᶜ
+None:
 
-- Exactly one:
-  ABᶜCᶜ ∪ AᶜBCᶜ ∪ AᶜBᶜC
+\[
+A^c\cap B^c\cap C^c
+\]
 
-- Exactly two:
-  ABCᶜ ∪ ABᶜC ∪ AᶜBC
+Exactly one:
 
-These appear frequently in exercises.
+\[
+(A\cap B^c\cap C^c)
+\cup
+(A^c\cap B\cap C^c)
+\cup
+(A^c\cap B^c\cap C)
+\]
 
-*** Partition of an Event
-Events can be decomposed into disjoint pieces.
+Exactly two:
+
+\[
+(A\cap B\cap C^c)
+\cup
+(A\cap B^c\cap C)
+\cup
+(A^c\cap B\cap C)
+\]
+
+**** Partition of an Event
+
+\[
+E
+=
+(E\cap F)
+\cup
+(E\cap F^c)
+\]
+
+where the two pieces are mutually exclusive.
+
+**** Infinite Unions and Intersections
+
+For a sequence \(E_1,E_2,\ldots\),
+
+\[
+\bigcup_{i=1}^{\infty} E_i
+\]
+
+means at least one \(E_i\) occurs.
+
+\[
+\bigcap_{i=1}^{\infty} E_i
+\]
+
+means all \(E_i\) occur.
 
 Example:
-- E = EF ∪ EFᶜ
 
-The two pieces:
-- EF
-- EFᶜ
+\[
+E_i
+=
+\left(
+-\frac{1}{2^i},
+\frac{1}{2^i}
+\right)
+\]
 
-are mutually exclusive.
+Then
 
-This idea later leads to the Law of Total Probability.
+\[
+\bigcup_{i=1}^{\infty} E_i
+=
+\left(
+-\frac12,
+\frac12
+\right)
+\]
 
-*** Infinite Unions and Intersections
-For a sequence of events E₁,E₂,...
+and
 
-- ⋃∞ᵢ₌₁ Ei
-  means at least one Ei occurs.
+\[
+\bigcap_{i=1}^{\infty} E_i
+=
+\{0\}
+\]
 
-- ⋂∞ᵢ₌₁ Ei
-  means all Ei occur.
+**** Event Sequences
 
-Example:
-Ei = (-1/2ⁱ, 1/2ⁱ)
+Many exercises define
 
-Then:
-- ⋃∞ᵢ₌₁ Ei = (-1/2, 1/2)
-- ⋂∞ᵢ₌₁ Ei = {0}
+\[
+A_1,A_2,A_3,\ldots
+\]
 
-*** Event Sequences
-Many exercises define:
+and ask about
 
-A₁, A₂, A₃, ...
+- infinitely many \(A_i\) occur,
+- eventually an \(A_i\) occurs,
+- all \(A_i\) occur.
 
-and ask about:
+**** Mutually Exclusive vs Complementary
 
-- infinitely many Ai occur
-- eventually an Ai occurs
-- all Ai occur
-
-This prepares for limit concepts in later chapters.
-
-*** Mutually Exclusive vs Complementary
 Mutually Exclusive:
-- A ∩ B = ∅
+
+\[
+A\cap B=\varnothing
+\]
 
 Complementary:
-- A ∩ B = ∅
-- A ∪ B = S
 
-Every pair of complementary events is mutually exclusive,
-but not every mutually exclusive pair is complementary.
+\[
+A\cap B=\varnothing
+\]
 
-*** Sample Space Design
+and
+
+\[
+A\cup B=S
+\]
+
+Every complementary pair is mutually exclusive, but not every mutually exclusive pair is complementary.
+
+**** Sample Space Design
+
 A major skill in probability is choosing a useful sample space.
 
-The same experiment may have different valid sample spaces.
-
 Example:
-Families with three children
 
-Detailed:
-- {BBB, BBG, BGB, GBB, BGG, GBG, GGB, GGG}
+Detailed representation:
 
-Compressed:
-- {0 girls, 1 girl, 2 girls, 3 girls}
+\[
+\{BBB,BBG,BGB,GBB,BGG,GBG,GGB,GGG\}
+\]
+
+Compressed representation:
+
+\[
+\{0\text{ girls},1\text{ girl},2\text{ girls},3\text{ girls}\}
+\]
 
 Different representations may lead to different probabilities for sample points.
 
-*** Event Translation Skill
-One of the most important abilities in probability:
+**** Event Translation Skill
 
 English statement → Set expression
 
-Examples:
+At least one occurs:
 
-- "At least one occurs"
-  → A ∪ B ∪ C
+\[
+A\cup B\cup C
+\]
 
-- "None occurs"
-  → AᶜBᶜCᶜ
+None occurs:
 
-- "A occurs but B does not"
-  → ABᶜ
+\[
+A^c\cap B^c\cap C^c
+\]
 
-- "A or B but not both"
-  → ABᶜ ∪ AᶜB
+\(A\) occurs but \(B\) does not:
 
-- "Exactly one occurs"
-  → ABᶜ ∪ AᶜB
+\[
+A\cap B^c
+\]
 
-- "Both occur"
-  → AB
+\(A\) or \(B\) but not both:
+
+\[
+(A\cap B^c)
+\cup
+(A^c\cap B)
+\]
+
+Exactly one occurs:
+
+\[
+(A\cap B^c)
+\cup
+(A^c\cap B)
+\]
+
+Both occur:
+
+\[
+A\cap B
+\]
